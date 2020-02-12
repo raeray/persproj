@@ -59,6 +59,7 @@ class ldaModel(object):
         stemmer = SnowballStemmer("english", ignore_stopwords=True)
         return stemmer.stem(text)
 
+
     def preprocess(self, text):
         result = []
         for token in gensim.utils.simple_preprocess(text):
