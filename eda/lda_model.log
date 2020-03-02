@@ -1,0 +1,382 @@
+2020-02-24 11:59:49,882 : INFO : using serial LDA version on this node
+2020-02-24 11:59:49,922 : INFO : running online LDA training, 10 topics, 5 passes over the supplied corpus of 4318 documents, updating every 2000 documents, evaluating every ~4318 documents, iterating 1000x with a convergence threshold of 0.001000
+2020-02-24 11:59:49,924 : INFO : training LDA model using 4 processes
+2020-02-24 11:59:49,973 : INFO : PROGRESS: pass 0, dispatched chunk #0 = documents up to #500/4318, outstanding queue size 1
+2020-02-24 11:59:49,988 : INFO : PROGRESS: pass 0, dispatched chunk #1 = documents up to #1000/4318, outstanding queue size 2
+2020-02-24 11:59:49,991 : INFO : PROGRESS: pass 0, dispatched chunk #2 = documents up to #1500/4318, outstanding queue size 3
+2020-02-24 11:59:49,993 : INFO : PROGRESS: pass 0, dispatched chunk #3 = documents up to #2000/4318, outstanding queue size 4
+2020-02-24 11:59:50,006 : INFO : PROGRESS: pass 0, dispatched chunk #4 = documents up to #2500/4318, outstanding queue size 5
+2020-02-24 11:59:50,007 : INFO : PROGRESS: pass 0, dispatched chunk #5 = documents up to #3000/4318, outstanding queue size 6
+2020-02-24 11:59:50,009 : INFO : PROGRESS: pass 0, dispatched chunk #6 = documents up to #3500/4318, outstanding queue size 7
+2020-02-24 11:59:50,010 : INFO : PROGRESS: pass 0, dispatched chunk #7 = documents up to #4000/4318, outstanding queue size 8
+2020-02-24 11:59:50,018 : INFO : PROGRESS: pass 0, dispatched chunk #8 = documents up to #4318/4318, outstanding queue size 9
+2020-02-24 11:59:52,260 : INFO : merging changes from 2000 documents into a model of 4318 documents
+2020-02-24 11:59:52,267 : INFO : topic #8 (0.900): 0.013*"line" + 0.011*"select" + 0.010*"come" + 0.009*"leg" + 0.008*"price" + 0.008*"qualiti" + 0.007*"wait" + 0.007*"tast" + 0.007*"look" + 0.007*"dinner"
+2020-02-24 11:59:52,268 : INFO : topic #1 (0.900): 0.014*"price" + 0.012*"line" + 0.010*"leg" + 0.010*"dinner" + 0.010*"come" + 0.009*"select" + 0.009*"worth" + 0.009*"sushi" + 0.008*"great" + 0.008*"qualiti"
+2020-02-24 11:59:52,268 : INFO : topic #3 (0.900): 0.011*"line" + 0.011*"come" + 0.010*"wait" + 0.010*"price" + 0.010*"great" + 0.009*"leg" + 0.009*"place" + 0.009*"dinner" + 0.009*"select" + 0.008*"well"
+2020-02-24 11:59:52,268 : INFO : topic #9 (0.900): 0.015*"line" + 0.014*"wait" + 0.013*"dinner" + 0.011*"select" + 0.011*"come" + 0.010*"leg" + 0.009*"price" + 0.009*"best" + 0.008*"well" + 0.008*"sushi"
+2020-02-24 11:59:52,268 : INFO : topic #7 (0.900): 0.013*"great" + 0.010*"lunch" + 0.009*"come" + 0.009*"wait" + 0.009*"select" + 0.008*"well" + 0.008*"dinner" + 0.007*"price" + 0.007*"sushi" + 0.007*"best"
+2020-02-24 11:59:52,268 : INFO : topic diff=1.657922, rho=1.000000
+2020-02-24 11:59:53,544 : INFO : -7.198 per-word bound, 146.9 perplexity estimate based on a held-out corpus of 318 documents with 12537 words
+2020-02-24 11:59:53,941 : INFO : merging changes from 2000 documents into a model of 4318 documents
+2020-02-24 11:59:53,942 : INFO : topic #7 (0.900): 0.013*"great" + 0.010*"lunch" + 0.010*"come" + 0.009*"wait" + 0.009*"select" + 0.008*"well" + 0.008*"dinner" + 0.007*"best" + 0.007*"sushi" + 0.007*"place"
+2020-02-24 11:59:53,942 : INFO : topic #3 (0.900): 0.011*"come" + 0.011*"line" + 0.010*"price" + 0.010*"wait" + 0.010*"great" + 0.009*"leg" + 0.009*"select" + 0.009*"place" + 0.009*"dinner" + 0.008*"well"
+2020-02-24 11:59:53,943 : INFO : topic #5 (0.900): 0.012*"wait" + 0.011*"leg" + 0.010*"dinner" + 0.010*"price" + 0.008*"come" + 0.008*"great" + 0.008*"line" + 0.008*"meat" + 0.008*"prime" + 0.008*"tast"
+2020-02-24 11:59:53,943 : INFO : topic #9 (0.900): 0.015*"line" + 0.014*"wait" + 0.012*"dinner" + 0.012*"select" + 0.011*"come" + 0.010*"leg" + 0.009*"price" + 0.009*"best" + 0.009*"sushi" + 0.008*"well"
+2020-02-24 11:59:53,943 : INFO : topic #6 (0.900): 0.011*"select" + 0.010*"come" + 0.010*"qualiti" + 0.009*"servic" + 0.009*"line" + 0.008*"great" + 0.008*"pretti" + 0.008*"leg" + 0.008*"dinner" + 0.008*"best"
+2020-02-24 11:59:53,943 : INFO : topic diff=0.374287, rho=0.447214
+2020-02-24 11:59:54,569 : INFO : -7.179 per-word bound, 144.9 perplexity estimate based on a held-out corpus of 318 documents with 12537 words
+2020-02-24 11:59:54,573 : INFO : merging changes from 318 documents into a model of 4318 documents
+2020-02-24 11:59:54,574 : INFO : topic #4 (0.900): 0.014*"line" + 0.012*"price" + 0.011*"dinner" + 0.011*"come" + 0.010*"leg" + 0.009*"place" + 0.008*"prime" + 0.008*"select" + 0.008*"sushi" + 0.008*"best"
+2020-02-24 11:59:54,574 : INFO : topic #2 (0.900): 0.010*"line" + 0.010*"wait" + 0.009*"dinner" + 0.009*"worth" + 0.009*"place" + 0.009*"come" + 0.008*"great" + 0.008*"leg" + 0.008*"sushi" + 0.008*"well"
+2020-02-24 11:59:54,575 : INFO : topic #0 (0.900): 0.011*"best" + 0.009*"line" + 0.009*"price" + 0.009*"prime" + 0.009*"dinner" + 0.009*"come" + 0.008*"servic" + 0.008*"great" + 0.008*"wait" + 0.007*"sushi"
+2020-02-24 11:59:54,575 : INFO : topic #6 (0.900): 0.011*"come" + 0.011*"select" + 0.009*"line" + 0.009*"qualiti" + 0.009*"servic" + 0.008*"great" + 0.008*"leg" + 0.008*"dinner" + 0.008*"pretti" + 0.008*"best"
+2020-02-24 11:59:54,575 : INFO : topic #1 (0.900): 0.014*"price" + 0.013*"line" + 0.010*"leg" + 0.010*"come" + 0.010*"dinner" + 0.010*"worth" + 0.009*"select" + 0.009*"sushi" + 0.008*"great" + 0.008*"best"
+2020-02-24 11:59:54,575 : INFO : topic diff=0.391969, rho=0.333333
+2020-02-24 11:59:55,062 : INFO : -7.079 per-word bound, 135.3 perplexity estimate based on a held-out corpus of 318 documents with 12537 words
+2020-02-24 11:59:55,063 : INFO : PROGRESS: pass 1, dispatched chunk #0 = documents up to #500/4318, outstanding queue size 1
+2020-02-24 11:59:55,067 : INFO : PROGRESS: pass 1, dispatched chunk #1 = documents up to #1000/4318, outstanding queue size 2
+2020-02-24 11:59:55,067 : INFO : PROGRESS: pass 1, dispatched chunk #2 = documents up to #1500/4318, outstanding queue size 3
+2020-02-24 11:59:55,067 : INFO : PROGRESS: pass 1, dispatched chunk #3 = documents up to #2000/4318, outstanding queue size 4
+2020-02-24 11:59:55,067 : INFO : PROGRESS: pass 1, dispatched chunk #4 = documents up to #2500/4318, outstanding queue size 5
+2020-02-24 11:59:55,068 : INFO : PROGRESS: pass 1, dispatched chunk #5 = documents up to #3000/4318, outstanding queue size 6
+2020-02-24 11:59:55,068 : INFO : PROGRESS: pass 1, dispatched chunk #6 = documents up to #3500/4318, outstanding queue size 7
+2020-02-24 11:59:55,068 : INFO : PROGRESS: pass 1, dispatched chunk #7 = documents up to #4000/4318, outstanding queue size 8
+2020-02-24 11:59:55,075 : INFO : PROGRESS: pass 1, dispatched chunk #8 = documents up to #4318/4318, outstanding queue size 9
+2020-02-24 11:59:56,930 : INFO : merging changes from 2000 documents into a model of 4318 documents
+2020-02-24 11:59:56,932 : INFO : topic #0 (0.900): 0.011*"best" + 0.009*"line" + 0.009*"price" + 0.009*"dinner" + 0.009*"servic" + 0.009*"come" + 0.009*"prime" + 0.008*"great" + 0.008*"wait" + 0.007*"fresh"
+2020-02-24 11:59:56,932 : INFO : topic #1 (0.900): 0.014*"price" + 0.013*"line" + 0.010*"leg" + 0.010*"dinner" + 0.010*"worth" + 0.010*"come" + 0.009*"select" + 0.009*"sushi" + 0.008*"great" + 0.008*"breakfast"
+2020-02-24 11:59:56,933 : INFO : topic #7 (0.900): 0.014*"great" + 0.011*"lunch" + 0.010*"come" + 0.009*"select" + 0.009*"wait" + 0.008*"dinner" + 0.008*"well" + 0.007*"sushi" + 0.007*"best" + 0.007*"drink"
+2020-02-24 11:59:56,933 : INFO : topic #5 (0.900): 0.011*"wait" + 0.011*"leg" + 0.010*"dinner" + 0.009*"price" + 0.009*"station" + 0.009*"prime" + 0.009*"line" + 0.008*"come" + 0.008*"brunch" + 0.008*"meat"
+2020-02-24 11:59:56,933 : INFO : topic #8 (0.900): 0.013*"line" + 0.011*"select" + 0.010*"come" + 0.010*"leg" + 0.008*"price" + 0.007*"qualiti" + 0.007*"wait" + 0.007*"tast" + 0.006*"look" + 0.006*"best"
+2020-02-24 11:59:56,933 : INFO : topic diff=0.181051, rho=0.306627
+2020-02-24 11:59:58,318 : INFO : -7.093 per-word bound, 136.5 perplexity estimate based on a held-out corpus of 318 documents with 12537 words
+2020-02-24 11:59:58,615 : INFO : merging changes from 2000 documents into a model of 4318 documents
+2020-02-24 11:59:58,617 : INFO : topic #9 (0.900): 0.016*"line" + 0.015*"wait" + 0.013*"dinner" + 0.012*"select" + 0.011*"come" + 0.010*"leg" + 0.009*"best" + 0.009*"price" + 0.009*"sushi" + 0.008*"well"
+2020-02-24 11:59:58,617 : INFO : topic #2 (0.900): 0.010*"wait" + 0.010*"line" + 0.010*"dinner" + 0.010*"worth" + 0.009*"place" + 0.009*"come" + 0.008*"great" + 0.008*"sushi" + 0.008*"lunch" + 0.008*"breakfast"
+2020-02-24 11:59:58,617 : INFO : topic #1 (0.900): 0.015*"price" + 0.013*"line" + 0.010*"leg" + 0.010*"dinner" + 0.010*"worth" + 0.010*"come" + 0.010*"select" + 0.009*"sushi" + 0.009*"great" + 0.008*"breakfast"
+2020-02-24 11:59:58,617 : INFO : topic #8 (0.900): 0.012*"line" + 0.011*"select" + 0.010*"leg" + 0.010*"come" + 0.007*"price" + 0.007*"qualiti" + 0.007*"tast" + 0.007*"look" + 0.006*"salad" + 0.006*"wait"
+2020-02-24 11:59:58,618 : INFO : topic #7 (0.900): 0.014*"great" + 0.011*"lunch" + 0.010*"come" + 0.009*"select" + 0.008*"wait" + 0.008*"dinner" + 0.008*"well" + 0.008*"sushi" + 0.007*"best" + 0.007*"drink"
+2020-02-24 11:59:58,618 : INFO : topic diff=0.179973, rho=0.306627
+2020-02-24 11:59:59,266 : INFO : -7.101 per-word bound, 137.3 perplexity estimate based on a held-out corpus of 318 documents with 12537 words
+2020-02-24 11:59:59,267 : INFO : merging changes from 318 documents into a model of 4318 documents
+2020-02-24 11:59:59,269 : INFO : topic #7 (0.900): 0.014*"great" + 0.012*"lunch" + 0.010*"select" + 0.009*"come" + 0.008*"drink" + 0.008*"wait" + 0.008*"sushi" + 0.008*"dinner" + 0.007*"well" + 0.007*"delici"
+2020-02-24 11:59:59,269 : INFO : topic #1 (0.900): 0.015*"price" + 0.013*"line" + 0.011*"worth" + 0.011*"dinner" + 0.010*"leg" + 0.010*"come" + 0.010*"select" + 0.009*"breakfast" + 0.009*"sushi" + 0.009*"great"
+2020-02-24 11:59:59,269 : INFO : topic #9 (0.900): 0.017*"line" + 0.015*"wait" + 0.012*"dinner" + 0.011*"come" + 0.011*"select" + 0.010*"leg" + 0.009*"best" + 0.009*"price" + 0.008*"worth" + 0.008*"sushi"
+2020-02-24 11:59:59,270 : INFO : topic #5 (0.900): 0.012*"leg" + 0.011*"wait" + 0.010*"dinner" + 0.009*"prime" + 0.009*"station" + 0.009*"price" + 0.009*"come" + 0.008*"line" + 0.008*"brunch" + 0.008*"meat"
+2020-02-24 11:59:59,270 : INFO : topic #0 (0.900): 0.013*"best" + 0.010*"servic" + 0.009*"line" + 0.009*"price" + 0.009*"prime" + 0.009*"dinner" + 0.009*"come" + 0.008*"great" + 0.008*"fresh" + 0.008*"wait"
+2020-02-24 11:59:59,270 : INFO : topic diff=0.343434, rho=0.306627
+2020-02-24 11:59:59,770 : INFO : -6.981 per-word bound, 126.3 perplexity estimate based on a held-out corpus of 318 documents with 12537 words
+2020-02-24 11:59:59,770 : INFO : PROGRESS: pass 2, dispatched chunk #0 = documents up to #500/4318, outstanding queue size 1
+2020-02-24 11:59:59,775 : INFO : PROGRESS: pass 2, dispatched chunk #1 = documents up to #1000/4318, outstanding queue size 2
+2020-02-24 11:59:59,775 : INFO : PROGRESS: pass 2, dispatched chunk #2 = documents up to #1500/4318, outstanding queue size 3
+2020-02-24 11:59:59,775 : INFO : PROGRESS: pass 2, dispatched chunk #3 = documents up to #2000/4318, outstanding queue size 4
+2020-02-24 11:59:59,775 : INFO : PROGRESS: pass 2, dispatched chunk #4 = documents up to #2500/4318, outstanding queue size 5
+2020-02-24 11:59:59,775 : INFO : PROGRESS: pass 2, dispatched chunk #5 = documents up to #3000/4318, outstanding queue size 6
+2020-02-24 11:59:59,775 : INFO : PROGRESS: pass 2, dispatched chunk #6 = documents up to #3500/4318, outstanding queue size 7
+2020-02-24 11:59:59,776 : INFO : PROGRESS: pass 2, dispatched chunk #7 = documents up to #4000/4318, outstanding queue size 8
+2020-02-24 11:59:59,784 : INFO : PROGRESS: pass 2, dispatched chunk #8 = documents up to #4318/4318, outstanding queue size 9
+2020-02-24 12:00:01,935 : INFO : merging changes from 2000 documents into a model of 4318 documents
+2020-02-24 12:00:01,936 : INFO : topic #9 (0.900): 0.018*"line" + 0.016*"wait" + 0.013*"dinner" + 0.011*"come" + 0.011*"select" + 0.010*"leg" + 0.009*"best" + 0.009*"price" + 0.009*"worth" + 0.008*"sushi"
+2020-02-24 12:00:01,937 : INFO : topic #4 (0.900): 0.014*"line" + 0.014*"price" + 0.013*"dinner" + 0.012*"leg" + 0.011*"come" + 0.009*"well" + 0.009*"place" + 0.009*"prime" + 0.009*"select" + 0.008*"best"
+2020-02-24 12:00:01,937 : INFO : topic #0 (0.900): 0.014*"best" + 0.010*"servic" + 0.009*"price" + 0.009*"line" + 0.009*"come" + 0.009*"great" + 0.009*"prime" + 0.009*"dinner" + 0.008*"fresh" + 0.008*"wait"
+2020-02-24 12:00:01,937 : INFO : topic #7 (0.900): 0.015*"great" + 0.012*"lunch" + 0.010*"select" + 0.009*"come" + 0.009*"drink" + 0.008*"sushi" + 0.008*"wait" + 0.008*"delici" + 0.007*"dinner" + 0.007*"well"
+2020-02-24 12:00:01,937 : INFO : topic #8 (0.900): 0.012*"line" + 0.011*"select" + 0.010*"leg" + 0.009*"come" + 0.007*"qualiti" + 0.007*"tast" + 0.007*"price" + 0.007*"salad" + 0.006*"look" + 0.006*"shrimp"
+2020-02-24 12:00:01,938 : INFO : topic diff=0.237622, rho=0.293156
+2020-02-24 12:00:03,540 : INFO : -6.990 per-word bound, 127.1 perplexity estimate based on a held-out corpus of 318 documents with 12537 words
+2020-02-24 12:00:03,910 : INFO : merging changes from 2000 documents into a model of 4318 documents
+2020-02-24 12:00:03,912 : INFO : topic #0 (0.900): 0.015*"best" + 0.011*"servic" + 0.010*"price" + 0.009*"line" + 0.009*"great" + 0.009*"come" + 0.009*"prime" + 0.009*"dinner" + 0.008*"wait" + 0.008*"fresh"
+2020-02-24 12:00:03,912 : INFO : topic #7 (0.900): 0.015*"great" + 0.013*"lunch" + 0.010*"select" + 0.009*"come" + 0.009*"drink" + 0.008*"sushi" + 0.008*"delici" + 0.008*"wait" + 0.007*"dinner" + 0.007*"well"
+2020-02-24 12:00:03,912 : INFO : topic #9 (0.900): 0.018*"line" + 0.016*"wait" + 0.013*"dinner" + 0.011*"come" + 0.011*"select" + 0.010*"leg" + 0.009*"best" + 0.009*"price" + 0.009*"worth" + 0.008*"sushi"
+2020-02-24 12:00:03,913 : INFO : topic #6 (0.900): 0.013*"come" + 0.012*"servic" + 0.012*"select" + 0.011*"qualiti" + 0.009*"great" + 0.009*"pretti" + 0.008*"line" + 0.008*"varieti" + 0.008*"best" + 0.008*"seafood"
+2020-02-24 12:00:03,913 : INFO : topic #8 (0.900): 0.011*"select" + 0.011*"line" + 0.010*"leg" + 0.009*"come" + 0.007*"tast" + 0.007*"salad" + 0.007*"qualiti" + 0.007*"look" + 0.007*"price" + 0.007*"shrimp"
+2020-02-24 12:00:03,913 : INFO : topic diff=0.217898, rho=0.293156
+2020-02-24 12:00:04,564 : INFO : -6.996 per-word bound, 127.6 perplexity estimate based on a held-out corpus of 318 documents with 12537 words
+2020-02-24 12:00:04,566 : INFO : merging changes from 318 documents into a model of 4318 documents
+2020-02-24 12:00:04,567 : INFO : topic #7 (0.900): 0.014*"great" + 0.013*"lunch" + 0.011*"select" + 0.010*"drink" + 0.009*"come" + 0.008*"sushi" + 0.008*"delici" + 0.007*"tri" + 0.007*"dinner" + 0.007*"well"
+2020-02-24 12:00:04,567 : INFO : topic #2 (0.900): 0.013*"breakfast" + 0.010*"dinner" + 0.010*"line" + 0.010*"worth" + 0.010*"lunch" + 0.009*"wait" + 0.009*"place" + 0.009*"think" + 0.008*"great" + 0.008*"sushi"
+2020-02-24 12:00:04,567 : INFO : topic #3 (0.900): 0.014*"line" + 0.011*"wait" + 0.010*"come" + 0.010*"price" + 0.009*"place" + 0.009*"leg" + 0.008*"dinner" + 0.008*"select" + 0.008*"want" + 0.008*"great"
+2020-02-24 12:00:04,568 : INFO : topic #1 (0.900): 0.016*"price" + 0.013*"dinner" + 0.013*"worth" + 0.013*"line" + 0.011*"breakfast" + 0.010*"leg" + 0.010*"come" + 0.010*"select" + 0.010*"sushi" + 0.010*"person"
+2020-02-24 12:00:04,568 : INFO : topic #4 (0.900): 0.015*"line" + 0.014*"price" + 0.013*"leg" + 0.013*"dinner" + 0.012*"come" + 0.011*"prime" + 0.010*"well" + 0.009*"select" + 0.009*"best" + 0.009*"place"
+2020-02-24 12:00:04,568 : INFO : topic diff=0.393466, rho=0.293156
+2020-02-24 12:00:05,080 : INFO : -6.865 per-word bound, 116.5 perplexity estimate based on a held-out corpus of 318 documents with 12537 words
+2020-02-24 12:00:05,080 : INFO : PROGRESS: pass 3, dispatched chunk #0 = documents up to #500/4318, outstanding queue size 1
+2020-02-24 12:00:05,089 : INFO : PROGRESS: pass 3, dispatched chunk #1 = documents up to #1000/4318, outstanding queue size 2
+2020-02-24 12:00:05,089 : INFO : PROGRESS: pass 3, dispatched chunk #2 = documents up to #1500/4318, outstanding queue size 3
+2020-02-24 12:00:05,090 : INFO : PROGRESS: pass 3, dispatched chunk #3 = documents up to #2000/4318, outstanding queue size 4
+2020-02-24 12:00:05,097 : INFO : PROGRESS: pass 3, dispatched chunk #4 = documents up to #2500/4318, outstanding queue size 5
+2020-02-24 12:00:05,097 : INFO : PROGRESS: pass 3, dispatched chunk #5 = documents up to #3000/4318, outstanding queue size 6
+2020-02-24 12:00:05,105 : INFO : PROGRESS: pass 3, dispatched chunk #6 = documents up to #3500/4318, outstanding queue size 7
+2020-02-24 12:00:05,105 : INFO : PROGRESS: pass 3, dispatched chunk #7 = documents up to #4000/4318, outstanding queue size 8
+2020-02-24 12:00:05,105 : INFO : PROGRESS: pass 3, dispatched chunk #8 = documents up to #4318/4318, outstanding queue size 9
+2020-02-24 12:00:06,936 : INFO : merging changes from 2000 documents into a model of 4318 documents
+2020-02-24 12:00:06,961 : INFO : topic #4 (0.900): 0.015*"price" + 0.014*"line" + 0.014*"leg" + 0.014*"dinner" + 0.012*"come" + 0.011*"well" + 0.011*"prime" + 0.010*"select" + 0.009*"best" + 0.009*"place"
+2020-02-24 12:00:06,964 : INFO : topic #6 (0.900): 0.015*"come" + 0.013*"servic" + 0.012*"select" + 0.011*"qualiti" + 0.010*"great" + 0.009*"seafood" + 0.008*"varieti" + 0.008*"pretti" + 0.008*"line" + 0.007*"star"
+2020-02-24 12:00:06,964 : INFO : topic #5 (0.900): 0.012*"leg" + 0.011*"station" + 0.010*"prime" + 0.010*"wait" + 0.009*"dinner" + 0.009*"meat" + 0.008*"beef" + 0.008*"brunch" + 0.008*"price" + 0.008*"line"
+2020-02-24 12:00:06,974 : INFO : topic #7 (0.900): 0.015*"great" + 0.013*"lunch" + 0.011*"drink" + 0.011*"select" + 0.009*"come" + 0.009*"delici" + 0.009*"sushi" + 0.007*"tri" + 0.007*"option" + 0.007*"dinner"
+2020-02-24 12:00:06,975 : INFO : topic #2 (0.900): 0.014*"breakfast" + 0.010*"dinner" + 0.010*"worth" + 0.010*"wait" + 0.010*"place" + 0.010*"think" + 0.010*"line" + 0.010*"lunch" + 0.008*"great" + 0.008*"come"
+2020-02-24 12:00:06,975 : INFO : topic diff=0.284807, rho=0.281316
+2020-02-24 12:00:08,701 : INFO : -6.873 per-word bound, 117.2 perplexity estimate based on a held-out corpus of 318 documents with 12537 words
+2020-02-24 12:00:09,045 : INFO : merging changes from 2000 documents into a model of 4318 documents
+2020-02-24 12:00:09,046 : INFO : topic #2 (0.900): 0.015*"breakfast" + 0.010*"dinner" + 0.010*"lunch" + 0.010*"wait" + 0.010*"worth" + 0.010*"think" + 0.010*"place" + 0.009*"line" + 0.008*"great" + 0.008*"sushi"
+2020-02-24 12:00:09,047 : INFO : topic #3 (0.900): 0.015*"line" + 0.013*"wait" + 0.010*"come" + 0.010*"place" + 0.009*"price" + 0.008*"leg" + 0.008*"well" + 0.008*"want" + 0.008*"peopl" + 0.008*"great"
+2020-02-24 12:00:09,047 : INFO : topic #6 (0.900): 0.015*"come" + 0.013*"servic" + 0.012*"qualiti" + 0.012*"select" + 0.011*"great" + 0.009*"seafood" + 0.009*"varieti" + 0.008*"pretti" + 0.007*"price" + 0.007*"star"
+2020-02-24 12:00:09,047 : INFO : topic #4 (0.900): 0.016*"price" + 0.015*"leg" + 0.014*"dinner" + 0.014*"line" + 0.012*"well" + 0.012*"come" + 0.011*"prime" + 0.010*"select" + 0.010*"place" + 0.010*"best"
+2020-02-24 12:00:09,047 : INFO : topic #5 (0.900): 0.013*"leg" + 0.011*"station" + 0.011*"prime" + 0.010*"wait" + 0.009*"meat" + 0.009*"beef" + 0.009*"dinner" + 0.008*"brunch" + 0.008*"price" + 0.008*"tast"
+2020-02-24 12:00:09,047 : INFO : topic diff=0.263296, rho=0.281316
+2020-02-24 12:00:09,587 : INFO : -6.878 per-word bound, 117.6 perplexity estimate based on a held-out corpus of 318 documents with 12537 words
+2020-02-24 12:00:09,591 : INFO : merging changes from 318 documents into a model of 4318 documents
+2020-02-24 12:00:09,592 : INFO : topic #2 (0.900): 0.017*"breakfast" + 0.010*"lunch" + 0.010*"think" + 0.010*"dinner" + 0.010*"place" + 0.009*"line" + 0.009*"wait" + 0.009*"worth" + 0.008*"champagn" + 0.008*"drink"
+2020-02-24 12:00:09,592 : INFO : topic #7 (0.900): 0.015*"great" + 0.013*"lunch" + 0.012*"drink" + 0.011*"select" + 0.009*"delici" + 0.009*"come" + 0.009*"sushi" + 0.008*"option" + 0.008*"tri" + 0.007*"place"
+2020-02-24 12:00:09,593 : INFO : topic #5 (0.900): 0.013*"leg" + 0.011*"station" + 0.011*"prime" + 0.010*"wait" + 0.009*"beef" + 0.008*"dinner" + 0.008*"come" + 0.008*"brunch" + 0.008*"meat" + 0.008*"line"
+2020-02-24 12:00:09,593 : INFO : topic #3 (0.900): 0.016*"line" + 0.012*"wait" + 0.010*"come" + 0.009*"place" + 0.009*"want" + 0.009*"price" + 0.008*"leg" + 0.008*"hour" + 0.008*"money" + 0.008*"peopl"
+2020-02-24 12:00:09,593 : INFO : topic #8 (0.900): 0.012*"leg" + 0.011*"select" + 0.009*"line" + 0.009*"shrimp" + 0.008*"tast" + 0.008*"come" + 0.008*"salad" + 0.007*"roll" + 0.007*"best" + 0.007*"small"
+2020-02-24 12:00:09,593 : INFO : topic diff=0.424766, rho=0.281316
+2020-02-24 12:00:10,050 : INFO : -6.767 per-word bound, 108.9 perplexity estimate based on a held-out corpus of 318 documents with 12537 words
+2020-02-24 12:00:10,050 : INFO : PROGRESS: pass 4, dispatched chunk #0 = documents up to #500/4318, outstanding queue size 1
+2020-02-24 12:00:10,057 : INFO : PROGRESS: pass 4, dispatched chunk #1 = documents up to #1000/4318, outstanding queue size 2
+2020-02-24 12:00:10,058 : INFO : PROGRESS: pass 4, dispatched chunk #2 = documents up to #1500/4318, outstanding queue size 3
+2020-02-24 12:00:10,058 : INFO : PROGRESS: pass 4, dispatched chunk #3 = documents up to #2000/4318, outstanding queue size 4
+2020-02-24 12:00:10,058 : INFO : PROGRESS: pass 4, dispatched chunk #4 = documents up to #2500/4318, outstanding queue size 5
+2020-02-24 12:00:10,059 : INFO : PROGRESS: pass 4, dispatched chunk #5 = documents up to #3000/4318, outstanding queue size 6
+2020-02-24 12:00:10,059 : INFO : PROGRESS: pass 4, dispatched chunk #6 = documents up to #3500/4318, outstanding queue size 7
+2020-02-24 12:00:10,059 : INFO : PROGRESS: pass 4, dispatched chunk #7 = documents up to #4000/4318, outstanding queue size 8
+2020-02-24 12:00:10,068 : INFO : PROGRESS: pass 4, dispatched chunk #8 = documents up to #4318/4318, outstanding queue size 9
+2020-02-24 12:00:11,714 : INFO : merging changes from 2000 documents into a model of 4318 documents
+2020-02-24 12:00:11,717 : INFO : topic #5 (0.900): 0.012*"leg" + 0.012*"station" + 0.011*"prime" + 0.009*"beef" + 0.009*"wait" + 0.009*"meat" + 0.008*"dinner" + 0.008*"brunch" + 0.008*"come" + 0.008*"line"
+2020-02-24 12:00:11,718 : INFO : topic #4 (0.900): 0.017*"price" + 0.016*"leg" + 0.015*"dinner" + 0.014*"line" + 0.014*"well" + 0.013*"prime" + 0.012*"come" + 0.011*"select" + 0.011*"pretti" + 0.010*"high"
+2020-02-24 12:00:11,718 : INFO : topic #3 (0.900): 0.016*"line" + 0.013*"wait" + 0.010*"come" + 0.009*"place" + 0.009*"want" + 0.009*"price" + 0.008*"peopl" + 0.008*"hour" + 0.008*"money" + 0.008*"leg"
+2020-02-24 12:00:11,718 : INFO : topic #6 (0.900): 0.017*"come" + 0.014*"servic" + 0.012*"select" + 0.012*"qualiti" + 0.012*"great" + 0.010*"seafood" + 0.009*"varieti" + 0.009*"want" + 0.009*"star" + 0.008*"station"
+2020-02-24 12:00:11,718 : INFO : topic #2 (0.900): 0.018*"breakfast" + 0.010*"lunch" + 0.010*"think" + 0.010*"dinner" + 0.010*"place" + 0.010*"wait" + 0.009*"line" + 0.009*"worth" + 0.008*"champagn" + 0.008*"drink"
+2020-02-24 12:00:11,719 : INFO : topic diff=0.312527, rho=0.270805
+2020-02-24 12:00:12,820 : INFO : -6.776 per-word bound, 109.6 perplexity estimate based on a held-out corpus of 318 documents with 12537 words
+2020-02-24 12:00:13,184 : INFO : merging changes from 2000 documents into a model of 4318 documents
+2020-02-24 12:00:13,186 : INFO : topic #1 (0.900): 0.019*"price" + 0.017*"dinner" + 0.016*"worth" + 0.012*"person" + 0.012*"line" + 0.012*"select" + 0.012*"breakfast" + 0.011*"sushi" + 0.011*"come" + 0.010*"leg"
+2020-02-24 12:00:13,187 : INFO : topic #0 (0.900): 0.020*"best" + 0.015*"servic" + 0.012*"server" + 0.011*"great" + 0.010*"brunch" + 0.010*"price" + 0.009*"tabl" + 0.009*"wait" + 0.009*"fresh" + 0.009*"line"
+2020-02-24 12:00:13,188 : INFO : topic #2 (0.900): 0.020*"breakfast" + 0.011*"lunch" + 0.011*"think" + 0.010*"dinner" + 0.010*"wait" + 0.009*"place" + 0.009*"worth" + 0.009*"line" + 0.008*"champagn" + 0.008*"great"
+2020-02-24 12:00:13,189 : INFO : topic #7 (0.900): 0.016*"great" + 0.014*"lunch" + 0.013*"drink" + 0.012*"select" + 0.010*"option" + 0.010*"delici" + 0.009*"sushi" + 0.009*"come" + 0.008*"tri" + 0.007*"servic"
+2020-02-24 12:00:13,189 : INFO : topic #6 (0.900): 0.017*"come" + 0.015*"servic" + 0.013*"qualiti" + 0.013*"select" + 0.012*"great" + 0.010*"seafood" + 0.010*"varieti" + 0.009*"want" + 0.008*"star" + 0.008*"pretti"
+2020-02-24 12:00:13,190 : INFO : topic diff=0.285151, rho=0.270805
+2020-02-24 12:00:13,856 : INFO : -6.783 per-word bound, 110.1 perplexity estimate based on a held-out corpus of 318 documents with 12537 words
+2020-02-24 12:00:13,857 : INFO : merging changes from 318 documents into a model of 4318 documents
+2020-02-24 12:00:13,859 : INFO : topic #3 (0.900): 0.017*"line" + 0.014*"wait" + 0.010*"want" + 0.009*"place" + 0.009*"come" + 0.009*"money" + 0.009*"hour" + 0.008*"price" + 0.008*"peopl" + 0.008*"look"
+2020-02-24 12:00:13,860 : INFO : topic #0 (0.900): 0.020*"best" + 0.015*"servic" + 0.013*"server" + 0.012*"great" + 0.011*"brunch" + 0.010*"price" + 0.010*"wait" + 0.010*"star" + 0.009*"fresh" + 0.009*"tabl"
+2020-02-24 12:00:13,860 : INFO : topic #9 (0.900): 0.027*"line" + 0.021*"wait" + 0.013*"dinner" + 0.012*"come" + 0.010*"worth" + 0.010*"lunch" + 0.009*"amaz" + 0.009*"price" + 0.009*"best" + 0.009*"leg"
+2020-02-24 12:00:13,860 : INFO : topic #1 (0.900): 0.019*"price" + 0.019*"dinner" + 0.017*"worth" + 0.013*"person" + 0.012*"breakfast" + 0.012*"select" + 0.012*"line" + 0.011*"come" + 0.011*"sushi" + 0.010*"leg"
+2020-02-24 12:00:13,860 : INFO : topic #7 (0.900): 0.015*"great" + 0.014*"drink" + 0.013*"lunch" + 0.012*"select" + 0.010*"delici" + 0.009*"option" + 0.009*"sushi" + 0.009*"come" + 0.008*"tri" + 0.007*"say"
+2020-02-24 12:00:13,861 : INFO : topic diff=0.417921, rho=0.270805
+2020-02-24 12:00:14,225 : INFO : -6.694 per-word bound, 103.6 perplexity estimate based on a held-out corpus of 318 documents with 12537 words
+2020-02-24 12:03:22,156 : INFO : adding document #0 to Dictionary(0 unique tokens: [])
+2020-02-24 12:03:22,540 : INFO : built Dictionary(8220 unique tokens: ['actual', 'bellagio', 'buffet', 'casino', 'charg']...) from 4318 documents (total 208631 corpus positions)
+2020-02-24 12:03:22,562 : INFO : discarding 7853 tokens: [('bellagio', 1520), ('buffet', 3321), ('chief', 2), ('crab', 1482), ('food', 2753), ('forgot', 32), ('go', 1313), ('good', 2069), ('happen', 85), ('heat', 61)]...
+2020-02-24 12:03:22,563 : INFO : keeping 367 tokens which were in no less than 100 and no more than 1295 (=30.0%) documents
+2020-02-24 12:03:22,569 : INFO : resulting dictionary: Dictionary(367 unique tokens: ['actual', 'casino', 'charg', 'close', 'cold']...)
+2020-02-24 12:09:39,840 : INFO : collecting all words and their counts
+2020-02-24 12:09:39,842 : INFO : PROGRESS: at sentence #0, processed 0 words and 0 word types
+2020-02-24 12:09:40,393 : INFO : collected 116162 word types from a corpus of 208631 words (unigram + bigrams) and 4318 sentences
+2020-02-24 12:09:40,393 : INFO : using 116162 counts as vocab in Phrases<0 vocab, min_count=20, threshold=10.0, max_vocab_size=40000000>
+2020-02-24 12:11:44,462 : INFO : collecting all words and their counts
+2020-02-24 12:11:44,465 : INFO : PROGRESS: at sentence #0, processed 0 words and 0 word types
+2020-02-24 12:11:45,002 : INFO : collected 116162 word types from a corpus of 208631 words (unigram + bigrams) and 4318 sentences
+2020-02-24 12:11:45,002 : INFO : using 116162 counts as vocab in Phrases<0 vocab, min_count=20, threshold=10.0, max_vocab_size=40000000>
+2020-02-24 12:19:51,829 : INFO : collecting all words and their counts
+2020-02-24 12:19:51,829 : INFO : PROGRESS: at sentence #0, processed 0 words and 0 word types
+2020-02-24 12:19:52,290 : INFO : collected 116162 word types from a corpus of 208631 words (unigram + bigrams) and 4318 sentences
+2020-02-24 12:19:52,290 : INFO : using 116162 counts as vocab in Phrases<0 vocab, min_count=20, threshold=10.0, max_vocab_size=40000000>
+2020-02-24 12:23:11,500 : INFO : collecting all words and their counts
+2020-02-24 12:23:11,502 : INFO : PROGRESS: at sentence #0, processed 0 words and 0 word types
+2020-02-24 12:23:11,975 : INFO : collected 116162 word types from a corpus of 208631 words (unigram + bigrams) and 4318 sentences
+2020-02-24 12:23:11,975 : INFO : using 116162 counts as vocab in Phrases<0 vocab, min_count=20, threshold=10.0, max_vocab_size=40000000>
+2020-02-24 12:23:13,095 : INFO : adding document #0 to Dictionary(0 unique tokens: [])
+2020-02-24 12:23:13,477 : INFO : built Dictionary(8356 unique tokens: ['actual', 'bellagio', 'buffet', 'casino', 'charg']...) from 4318 documents (total 218440 corpus positions)
+2020-02-24 12:23:13,505 : INFO : discarding 7966 tokens: [('bellagio', 1520), ('buffet', 3321), ('chief', 2), ('crab', 1482), ('food', 2753), ('forgot', 32), ('go', 1313), ('good', 2069), ('happen', 85), ('heat', 61)]...
+2020-02-24 12:23:13,505 : INFO : keeping 390 tokens which were in no less than 100 and no more than 1295 (=30.0%) documents
+2020-02-24 12:23:13,509 : INFO : resulting dictionary: Dictionary(390 unique tokens: ['actual', 'casino', 'charg', 'close', 'cold']...)
+2020-02-24 12:23:55,656 : INFO : using serial LDA version on this node
+2020-02-24 12:23:55,657 : INFO : running online LDA training, 10 topics, 5 passes over the supplied corpus of 4318 documents, updating every 2000 documents, evaluating every ~4318 documents, iterating 1000x with a convergence threshold of 0.001000
+2020-02-24 12:23:55,658 : INFO : training LDA model using 4 processes
+2020-02-24 12:23:55,733 : INFO : PROGRESS: pass 0, dispatched chunk #0 = documents up to #500/4318, outstanding queue size 1
+2020-02-24 12:23:55,744 : INFO : PROGRESS: pass 0, dispatched chunk #1 = documents up to #1000/4318, outstanding queue size 2
+2020-02-24 12:23:55,746 : INFO : PROGRESS: pass 0, dispatched chunk #2 = documents up to #1500/4318, outstanding queue size 3
+2020-02-24 12:23:55,748 : INFO : PROGRESS: pass 0, dispatched chunk #3 = documents up to #2000/4318, outstanding queue size 4
+2020-02-24 12:23:55,756 : INFO : PROGRESS: pass 0, dispatched chunk #4 = documents up to #2500/4318, outstanding queue size 5
+2020-02-24 12:23:55,757 : INFO : PROGRESS: pass 0, dispatched chunk #5 = documents up to #3000/4318, outstanding queue size 6
+2020-02-24 12:23:55,765 : INFO : PROGRESS: pass 0, dispatched chunk #6 = documents up to #3500/4318, outstanding queue size 7
+2020-02-24 12:23:55,767 : INFO : PROGRESS: pass 0, dispatched chunk #7 = documents up to #4000/4318, outstanding queue size 8
+2020-02-24 12:23:55,772 : INFO : PROGRESS: pass 0, dispatched chunk #8 = documents up to #4318/4318, outstanding queue size 9
+2020-02-24 12:23:57,051 : INFO : merging changes from 2000 documents into a model of 4318 documents
+2020-02-24 12:23:57,053 : INFO : topic #4 (0.900): 0.018*"come" + 0.015*"line" + 0.014*"dinner" + 0.013*"great" + 0.012*"tast" + 0.011*"sushi" + 0.010*"servic" + 0.010*"wait" + 0.010*"well" + 0.010*"leg"
+2020-02-24 12:23:57,053 : INFO : topic #7 (0.900): 0.018*"line" + 0.018*"come" + 0.014*"price" + 0.013*"dinner" + 0.012*"crab_leg" + 0.011*"select" + 0.011*"prime" + 0.010*"leg" + 0.010*"want" + 0.010*"wait"
+2020-02-24 12:23:57,053 : INFO : topic #0 (0.900): 0.018*"line" + 0.017*"wait" + 0.014*"qualiti" + 0.013*"leg" + 0.012*"place" + 0.012*"best" + 0.012*"price" + 0.012*"dinner" + 0.011*"great" + 0.011*"select"
+2020-02-24 12:23:57,054 : INFO : topic #3 (0.900): 0.016*"dinner" + 0.016*"price" + 0.013*"come" + 0.013*"wait" + 0.013*"select" + 0.012*"line" + 0.011*"great" + 0.011*"sushi" + 0.011*"leg" + 0.010*"qualiti"
+2020-02-24 12:23:57,054 : INFO : topic #5 (0.900): 0.016*"price" + 0.016*"line" + 0.015*"leg" + 0.014*"wait" + 0.013*"dinner" + 0.013*"sushi" + 0.012*"select" + 0.011*"best" + 0.011*"well" + 0.011*"prime"
+2020-02-24 12:23:57,054 : INFO : topic diff=0.562426, rho=1.000000
+2020-02-24 12:23:58,037 : INFO : -5.979 per-word bound, 63.1 perplexity estimate based on a held-out corpus of 318 documents with 9383 words
+2020-02-24 12:23:58,186 : INFO : merging changes from 2000 documents into a model of 4318 documents
+2020-02-24 12:23:58,186 : INFO : topic #3 (0.900): 0.016*"price" + 0.015*"dinner" + 0.014*"come" + 0.013*"select" + 0.013*"wait" + 0.011*"line" + 0.011*"great" + 0.011*"sushi" + 0.011*"leg" + 0.010*"qualiti"
+2020-02-24 12:23:58,187 : INFO : topic #0 (0.900): 0.018*"line" + 0.017*"wait" + 0.014*"qualiti" + 0.014*"leg" + 0.012*"place" + 0.012*"best" + 0.012*"price" + 0.011*"dinner" + 0.011*"select" + 0.011*"great"
+2020-02-24 12:23:58,187 : INFO : topic #9 (0.900): 0.014*"place" + 0.014*"select" + 0.013*"line" + 0.012*"leg" + 0.012*"sushi" + 0.012*"come" + 0.011*"tast" + 0.011*"wait" + 0.011*"great" + 0.010*"qualiti"
+2020-02-24 12:23:58,187 : INFO : topic #7 (0.900): 0.018*"come" + 0.017*"line" + 0.014*"price" + 0.013*"dinner" + 0.012*"crab_leg" + 0.012*"select" + 0.011*"prime" + 0.011*"leg" + 0.010*"want" + 0.010*"lunch"
+2020-02-24 12:23:58,187 : INFO : topic #1 (0.900): 0.016*"dinner" + 0.016*"wait" + 0.015*"great" + 0.015*"line" + 0.015*"worth" + 0.015*"price" + 0.013*"come" + 0.013*"select" + 0.011*"leg" + 0.011*"lunch"
+2020-02-24 12:23:58,187 : INFO : topic diff=0.054275, rho=0.447214
+2020-02-24 12:23:58,645 : INFO : -5.977 per-word bound, 63.0 perplexity estimate based on a held-out corpus of 318 documents with 9383 words
+2020-02-24 12:23:58,646 : INFO : merging changes from 318 documents into a model of 4318 documents
+2020-02-24 12:23:58,646 : INFO : topic #0 (0.900): 0.018*"line" + 0.016*"wait" + 0.014*"leg" + 0.013*"qualiti" + 0.013*"best" + 0.012*"place" + 0.012*"price" + 0.012*"dinner" + 0.011*"great" + 0.011*"select"
+2020-02-24 12:23:58,646 : INFO : topic #3 (0.900): 0.016*"dinner" + 0.016*"price" + 0.014*"come" + 0.013*"select" + 0.013*"wait" + 0.012*"line" + 0.011*"great" + 0.011*"leg" + 0.011*"sushi" + 0.009*"qualiti"
+2020-02-24 12:23:58,647 : INFO : topic #5 (0.900): 0.016*"line" + 0.015*"price" + 0.015*"leg" + 0.013*"sushi" + 0.013*"wait" + 0.013*"dinner" + 0.012*"prime" + 0.012*"best" + 0.011*"select" + 0.011*"well"
+2020-02-24 12:23:58,647 : INFO : topic #4 (0.900): 0.018*"come" + 0.016*"line" + 0.014*"dinner" + 0.013*"great" + 0.011*"sushi" + 0.011*"tast" + 0.010*"servic" + 0.010*"leg" + 0.010*"best" + 0.010*"select"
+2020-02-24 12:23:58,647 : INFO : topic #8 (0.900): 0.019*"come" + 0.015*"leg" + 0.014*"price" + 0.014*"dinner" + 0.012*"select" + 0.012*"qualiti" + 0.012*"lunch" + 0.010*"great" + 0.010*"pretti" + 0.010*"well"
+2020-02-24 12:23:58,647 : INFO : topic diff=0.076707, rho=0.333333
+2020-02-24 12:23:59,247 : INFO : -5.960 per-word bound, 62.3 perplexity estimate based on a held-out corpus of 318 documents with 9383 words
+2020-02-24 12:23:59,248 : INFO : PROGRESS: pass 1, dispatched chunk #0 = documents up to #500/4318, outstanding queue size 1
+2020-02-24 12:23:59,251 : INFO : PROGRESS: pass 1, dispatched chunk #1 = documents up to #1000/4318, outstanding queue size 2
+2020-02-24 12:23:59,251 : INFO : PROGRESS: pass 1, dispatched chunk #2 = documents up to #1500/4318, outstanding queue size 3
+2020-02-24 12:23:59,251 : INFO : PROGRESS: pass 1, dispatched chunk #3 = documents up to #2000/4318, outstanding queue size 4
+2020-02-24 12:23:59,251 : INFO : PROGRESS: pass 1, dispatched chunk #4 = documents up to #2500/4318, outstanding queue size 5
+2020-02-24 12:23:59,254 : INFO : PROGRESS: pass 1, dispatched chunk #5 = documents up to #3000/4318, outstanding queue size 6
+2020-02-24 12:23:59,254 : INFO : PROGRESS: pass 1, dispatched chunk #6 = documents up to #3500/4318, outstanding queue size 7
+2020-02-24 12:23:59,454 : INFO : PROGRESS: pass 1, dispatched chunk #7 = documents up to #4000/4318, outstanding queue size 8
+2020-02-24 12:23:59,454 : INFO : PROGRESS: pass 1, dispatched chunk #8 = documents up to #4318/4318, outstanding queue size 9
+2020-02-24 12:24:00,824 : INFO : merging changes from 2000 documents into a model of 4318 documents
+2020-02-24 12:24:00,828 : INFO : topic #8 (0.900): 0.020*"come" + 0.015*"leg" + 0.015*"price" + 0.014*"dinner" + 0.013*"qualiti" + 0.012*"select" + 0.012*"lunch" + 0.011*"pretti" + 0.010*"great" + 0.010*"well"
+2020-02-24 12:24:00,828 : INFO : topic #4 (0.900): 0.019*"come" + 0.015*"line" + 0.013*"dinner" + 0.013*"great" + 0.012*"tast" + 0.011*"tabl" + 0.011*"servic" + 0.011*"sushi" + 0.010*"wait" + 0.010*"well"
+2020-02-24 12:24:00,828 : INFO : topic #1 (0.900): 0.017*"dinner" + 0.016*"worth" + 0.016*"wait" + 0.016*"line" + 0.016*"great" + 0.015*"price" + 0.013*"come" + 0.013*"select" + 0.012*"leg" + 0.011*"lunch"
+2020-02-24 12:24:00,829 : INFO : topic #0 (0.900): 0.019*"line" + 0.018*"wait" + 0.014*"qualiti" + 0.013*"leg" + 0.013*"place" + 0.013*"best" + 0.012*"price" + 0.011*"dinner" + 0.011*"great" + 0.011*"select"
+2020-02-24 12:24:00,829 : INFO : topic #5 (0.900): 0.017*"line" + 0.016*"price" + 0.015*"leg" + 0.014*"sushi" + 0.014*"wait" + 0.013*"dinner" + 0.012*"prime" + 0.012*"best" + 0.011*"select" + 0.011*"well"
+2020-02-24 12:24:00,829 : INFO : topic diff=0.038330, rho=0.306627
+2020-02-24 12:24:02,039 : INFO : -5.960 per-word bound, 62.3 perplexity estimate based on a held-out corpus of 318 documents with 9383 words
+2020-02-24 12:24:02,206 : INFO : merging changes from 2000 documents into a model of 4318 documents
+2020-02-24 12:24:02,207 : INFO : topic #5 (0.900): 0.016*"line" + 0.016*"price" + 0.016*"leg" + 0.014*"sushi" + 0.014*"wait" + 0.013*"dinner" + 0.012*"best" + 0.012*"prime" + 0.012*"select" + 0.011*"well"
+2020-02-24 12:24:02,208 : INFO : topic #6 (0.900): 0.015*"line" + 0.014*"select" + 0.013*"best" + 0.013*"leg" + 0.013*"great" + 0.013*"crab_leg" + 0.011*"wait" + 0.011*"breakfast" + 0.011*"well" + 0.010*"prime"
+2020-02-24 12:24:02,208 : INFO : topic #1 (0.900): 0.017*"worth" + 0.017*"dinner" + 0.016*"great" + 0.016*"wait" + 0.015*"line" + 0.015*"price" + 0.013*"select" + 0.013*"come" + 0.012*"lunch" + 0.012*"leg"
+2020-02-24 12:24:02,208 : INFO : topic #8 (0.900): 0.020*"come" + 0.016*"leg" + 0.015*"price" + 0.014*"dinner" + 0.013*"qualiti" + 0.013*"select" + 0.012*"lunch" + 0.011*"pretti" + 0.010*"great" + 0.010*"well"
+2020-02-24 12:24:02,208 : INFO : topic #0 (0.900): 0.020*"line" + 0.019*"wait" + 0.014*"qualiti" + 0.013*"leg" + 0.013*"best" + 0.013*"place" + 0.012*"price" + 0.011*"dinner" + 0.011*"great" + 0.011*"select"
+2020-02-24 12:24:02,209 : INFO : topic diff=0.036251, rho=0.306627
+2020-02-24 12:24:02,816 : INFO : -5.960 per-word bound, 62.3 perplexity estimate based on a held-out corpus of 318 documents with 9383 words
+2020-02-24 12:24:02,817 : INFO : merging changes from 318 documents into a model of 4318 documents
+2020-02-24 12:24:02,818 : INFO : topic #8 (0.900): 0.020*"come" + 0.017*"leg" + 0.014*"price" + 0.014*"dinner" + 0.013*"qualiti" + 0.012*"select" + 0.012*"lunch" + 0.012*"pretti" + 0.010*"great" + 0.010*"well"
+2020-02-24 12:24:02,819 : INFO : topic #0 (0.900): 0.021*"line" + 0.019*"wait" + 0.013*"best" + 0.013*"place" + 0.013*"qualiti" + 0.013*"leg" + 0.012*"price" + 0.011*"dinner" + 0.011*"great" + 0.011*"servic"
+2020-02-24 12:24:02,819 : INFO : topic #4 (0.900): 0.019*"come" + 0.015*"line" + 0.013*"dinner" + 0.013*"great" + 0.012*"tabl" + 0.012*"servic" + 0.012*"tast" + 0.011*"sushi" + 0.010*"best" + 0.010*"well"
+2020-02-24 12:24:02,819 : INFO : topic #9 (0.900): 0.014*"select" + 0.013*"place" + 0.013*"line" + 0.012*"sushi" + 0.011*"leg" + 0.011*"come" + 0.010*"tast" + 0.010*"great" + 0.010*"station" + 0.009*"best"
+2020-02-24 12:24:02,819 : INFO : topic #1 (0.900): 0.018*"worth" + 0.017*"dinner" + 0.016*"great" + 0.016*"price" + 0.016*"line" + 0.016*"wait" + 0.013*"select" + 0.013*"come" + 0.012*"lunch" + 0.012*"leg"
+2020-02-24 12:24:02,820 : INFO : topic diff=0.069733, rho=0.306627
+2020-02-24 12:24:03,219 : INFO : -5.939 per-word bound, 61.4 perplexity estimate based on a held-out corpus of 318 documents with 9383 words
+2020-02-24 12:24:03,220 : INFO : PROGRESS: pass 2, dispatched chunk #0 = documents up to #500/4318, outstanding queue size 1
+2020-02-24 12:24:03,220 : INFO : PROGRESS: pass 2, dispatched chunk #1 = documents up to #1000/4318, outstanding queue size 2
+2020-02-24 12:24:03,220 : INFO : PROGRESS: pass 2, dispatched chunk #2 = documents up to #1500/4318, outstanding queue size 3
+2020-02-24 12:24:03,220 : INFO : PROGRESS: pass 2, dispatched chunk #3 = documents up to #2000/4318, outstanding queue size 4
+2020-02-24 12:24:03,220 : INFO : PROGRESS: pass 2, dispatched chunk #4 = documents up to #2500/4318, outstanding queue size 5
+2020-02-24 12:24:03,220 : INFO : PROGRESS: pass 2, dispatched chunk #5 = documents up to #3000/4318, outstanding queue size 6
+2020-02-24 12:24:03,221 : INFO : PROGRESS: pass 2, dispatched chunk #6 = documents up to #3500/4318, outstanding queue size 7
+2020-02-24 12:24:03,221 : INFO : PROGRESS: pass 2, dispatched chunk #7 = documents up to #4000/4318, outstanding queue size 8
+2020-02-24 12:24:03,254 : INFO : PROGRESS: pass 2, dispatched chunk #8 = documents up to #4318/4318, outstanding queue size 9
+2020-02-24 12:24:05,769 : INFO : merging changes from 2000 documents into a model of 4318 documents
+2020-02-24 12:24:05,786 : INFO : topic #3 (0.900): 0.018*"dinner" + 0.017*"price" + 0.014*"select" + 0.013*"come" + 0.013*"wynn" + 0.012*"wait" + 0.012*"great" + 0.011*"leg" + 0.011*"sushi" + 0.010*"line"
+2020-02-24 12:24:05,787 : INFO : topic #8 (0.900): 0.020*"come" + 0.017*"leg" + 0.014*"price" + 0.014*"qualiti" + 0.014*"dinner" + 0.012*"pretti" + 0.012*"select" + 0.012*"lunch" + 0.010*"beef" + 0.010*"well"
+2020-02-24 12:24:05,788 : INFO : topic #7 (0.900): 0.020*"line" + 0.019*"come" + 0.014*"price" + 0.014*"dinner" + 0.013*"prime" + 0.013*"crab_leg" + 0.012*"want" + 0.012*"leg" + 0.011*"select" + 0.011*"lunch"
+2020-02-24 12:24:05,788 : INFO : topic #9 (0.900): 0.014*"select" + 0.013*"place" + 0.012*"sushi" + 0.012*"line" + 0.011*"tast" + 0.011*"station" + 0.010*"leg" + 0.010*"come" + 0.010*"great" + 0.009*"salad"
+2020-02-24 12:24:05,788 : INFO : topic #0 (0.900): 0.022*"line" + 0.021*"wait" + 0.014*"qualiti" + 0.014*"place" + 0.014*"best" + 0.013*"leg" + 0.012*"price" + 0.011*"dinner" + 0.011*"servic" + 0.011*"great"
+2020-02-24 12:24:05,788 : INFO : topic diff=0.049238, rho=0.293156
+2020-02-24 12:24:06,872 : INFO : -5.935 per-word bound, 61.2 perplexity estimate based on a held-out corpus of 318 documents with 9383 words
+2020-02-24 12:24:07,243 : INFO : merging changes from 2000 documents into a model of 4318 documents
+2020-02-24 12:24:07,244 : INFO : topic #1 (0.900): 0.021*"worth" + 0.018*"dinner" + 0.018*"great" + 0.017*"price" + 0.017*"wait" + 0.016*"line" + 0.014*"select" + 0.013*"lunch" + 0.013*"come" + 0.012*"leg"
+2020-02-24 12:24:07,244 : INFO : topic #6 (0.900): 0.015*"select" + 0.014*"best" + 0.014*"great" + 0.014*"line" + 0.013*"leg" + 0.013*"crab_leg" + 0.012*"breakfast" + 0.010*"prime" + 0.010*"well" + 0.010*"wait"
+2020-02-24 12:24:07,245 : INFO : topic #5 (0.900): 0.018*"line" + 0.017*"leg" + 0.016*"price" + 0.015*"sushi" + 0.014*"dinner" + 0.014*"wait" + 0.013*"prime" + 0.013*"best" + 0.012*"well" + 0.011*"select"
+2020-02-24 12:24:07,245 : INFO : topic #7 (0.900): 0.020*"come" + 0.019*"line" + 0.014*"dinner" + 0.014*"price" + 0.014*"crab_leg" + 0.013*"prime" + 0.013*"want" + 0.012*"leg" + 0.012*"lunch" + 0.011*"select"
+2020-02-24 12:24:07,245 : INFO : topic #0 (0.900): 0.023*"line" + 0.023*"wait" + 0.015*"qualiti" + 0.014*"place" + 0.014*"best" + 0.013*"leg" + 0.012*"price" + 0.012*"servic" + 0.011*"great" + 0.011*"dinner"
+2020-02-24 12:24:07,245 : INFO : topic diff=0.042343, rho=0.293156
+2020-02-24 12:24:07,732 : INFO : -5.933 per-word bound, 61.1 perplexity estimate based on a held-out corpus of 318 documents with 9383 words
+2020-02-24 12:24:07,733 : INFO : merging changes from 318 documents into a model of 4318 documents
+2020-02-24 12:24:07,733 : INFO : topic #0 (0.900): 0.024*"line" + 0.024*"wait" + 0.015*"place" + 0.014*"best" + 0.014*"qualiti" + 0.013*"price" + 0.012*"leg" + 0.012*"servic" + 0.011*"dinner" + 0.011*"hour"
+2020-02-24 12:24:07,733 : INFO : topic #9 (0.900): 0.013*"select" + 0.013*"sushi" + 0.012*"place" + 0.011*"station" + 0.011*"line" + 0.011*"salad" + 0.010*"come" + 0.010*"tast" + 0.010*"roll" + 0.010*"serv"
+2020-02-24 12:24:07,733 : INFO : topic #1 (0.900): 0.022*"worth" + 0.019*"dinner" + 0.018*"great" + 0.018*"price" + 0.016*"wait" + 0.016*"line" + 0.014*"select" + 0.014*"lunch" + 0.013*"come" + 0.012*"leg"
+2020-02-24 12:24:07,734 : INFO : topic #2 (0.900): 0.018*"line" + 0.014*"come" + 0.013*"place" + 0.013*"price" + 0.012*"sushi" + 0.012*"best" + 0.011*"wait" + 0.011*"drink" + 0.011*"brunch" + 0.010*"worth"
+2020-02-24 12:24:07,734 : INFO : topic #6 (0.900): 0.016*"select" + 0.014*"best" + 0.014*"great" + 0.014*"line" + 0.013*"leg" + 0.013*"crab_leg" + 0.013*"breakfast" + 0.011*"prime" + 0.010*"wait" + 0.010*"worth"
+2020-02-24 12:24:07,734 : INFO : topic diff=0.077294, rho=0.293156
+2020-02-24 12:24:08,104 : INFO : -5.906 per-word bound, 59.9 perplexity estimate based on a held-out corpus of 318 documents with 9383 words
+2020-02-24 12:24:08,104 : INFO : PROGRESS: pass 3, dispatched chunk #0 = documents up to #500/4318, outstanding queue size 1
+2020-02-24 12:24:08,106 : INFO : PROGRESS: pass 3, dispatched chunk #1 = documents up to #1000/4318, outstanding queue size 2
+2020-02-24 12:24:08,107 : INFO : PROGRESS: pass 3, dispatched chunk #2 = documents up to #1500/4318, outstanding queue size 3
+2020-02-24 12:24:08,107 : INFO : PROGRESS: pass 3, dispatched chunk #3 = documents up to #2000/4318, outstanding queue size 4
+2020-02-24 12:24:08,115 : INFO : PROGRESS: pass 3, dispatched chunk #4 = documents up to #2500/4318, outstanding queue size 5
+2020-02-24 12:24:08,136 : INFO : PROGRESS: pass 3, dispatched chunk #5 = documents up to #3000/4318, outstanding queue size 6
+2020-02-24 12:24:08,137 : INFO : PROGRESS: pass 3, dispatched chunk #6 = documents up to #3500/4318, outstanding queue size 7
+2020-02-24 12:24:08,137 : INFO : PROGRESS: pass 3, dispatched chunk #7 = documents up to #4000/4318, outstanding queue size 8
+2020-02-24 12:24:08,137 : INFO : PROGRESS: pass 3, dispatched chunk #8 = documents up to #4318/4318, outstanding queue size 9
+2020-02-24 12:24:09,430 : INFO : merging changes from 2000 documents into a model of 4318 documents
+2020-02-24 12:24:09,431 : INFO : topic #1 (0.900): 0.024*"worth" + 0.020*"dinner" + 0.019*"great" + 0.019*"price" + 0.016*"wait" + 0.016*"line" + 0.015*"select" + 0.014*"lunch" + 0.013*"come" + 0.012*"place"
+2020-02-24 12:24:09,431 : INFO : topic #2 (0.900): 0.018*"line" + 0.014*"place" + 0.014*"come" + 0.013*"price" + 0.012*"brunch" + 0.012*"best" + 0.012*"sushi" + 0.012*"drink" + 0.012*"wait" + 0.010*"worth"
+2020-02-24 12:24:09,432 : INFO : topic #6 (0.900): 0.016*"select" + 0.015*"best" + 0.014*"great" + 0.013*"crab_leg" + 0.013*"leg" + 0.013*"line" + 0.013*"breakfast" + 0.011*"prime" + 0.010*"well" + 0.010*"wait"
+2020-02-24 12:24:09,432 : INFO : topic #4 (0.900): 0.022*"come" + 0.019*"tabl" + 0.015*"servic" + 0.014*"line" + 0.014*"great" + 0.013*"tast" + 0.012*"drink" + 0.012*"dinner" + 0.011*"server" + 0.010*"well"
+2020-02-24 12:24:09,432 : INFO : topic #9 (0.900): 0.013*"sushi" + 0.013*"select" + 0.012*"station" + 0.012*"roll" + 0.012*"salad" + 0.011*"place" + 0.011*"line" + 0.010*"tast" + 0.010*"shrimp" + 0.010*"brunch"
+2020-02-24 12:24:09,432 : INFO : topic diff=0.056884, rho=0.281316
+2020-02-24 12:24:10,441 : INFO : -5.899 per-word bound, 59.7 perplexity estimate based on a held-out corpus of 318 documents with 9383 words
+2020-02-24 12:24:10,837 : INFO : merging changes from 2000 documents into a model of 4318 documents
+2020-02-24 12:24:10,838 : INFO : topic #2 (0.900): 0.018*"line" + 0.015*"place" + 0.014*"come" + 0.013*"brunch" + 0.013*"price" + 0.012*"best" + 0.012*"sushi" + 0.012*"drink" + 0.011*"wait" + 0.010*"definit"
+2020-02-24 12:24:10,838 : INFO : topic #6 (0.900): 0.017*"select" + 0.015*"best" + 0.014*"great" + 0.014*"breakfast" + 0.013*"crab_leg" + 0.013*"leg" + 0.012*"line" + 0.011*"prime" + 0.010*"well" + 0.010*"place"
+2020-02-24 12:24:10,838 : INFO : topic #8 (0.900): 0.021*"leg" + 0.020*"come" + 0.015*"qualiti" + 0.015*"pretti" + 0.014*"price" + 0.013*"dinner" + 0.012*"select" + 0.012*"beef" + 0.012*"lunch" + 0.011*"plate"
+2020-02-24 12:24:10,839 : INFO : topic #0 (0.900): 0.030*"wait" + 0.028*"line" + 0.017*"place" + 0.016*"qualiti" + 0.015*"best" + 0.013*"hour" + 0.013*"long" + 0.013*"price" + 0.012*"servic" + 0.011*"leg"
+2020-02-24 12:24:10,839 : INFO : topic #4 (0.900): 0.022*"come" + 0.021*"tabl" + 0.016*"servic" + 0.014*"great" + 0.014*"line" + 0.014*"tast" + 0.013*"drink" + 0.011*"server" + 0.011*"dinner" + 0.010*"well"
+2020-02-24 12:24:10,839 : INFO : topic diff=0.048365, rho=0.281316
+2020-02-24 12:24:11,817 : INFO : -5.894 per-word bound, 59.5 perplexity estimate based on a held-out corpus of 318 documents with 9383 words
+2020-02-24 12:24:11,820 : INFO : merging changes from 318 documents into a model of 4318 documents
+2020-02-24 12:24:11,821 : INFO : topic #8 (0.900): 0.023*"leg" + 0.020*"come" + 0.016*"pretti" + 0.015*"qualiti" + 0.013*"price" + 0.013*"plate" + 0.012*"dinner" + 0.012*"select" + 0.011*"beef" + 0.011*"lunch"
+2020-02-24 12:24:11,821 : INFO : topic #7 (0.900): 0.023*"line" + 0.022*"come" + 0.017*"dinner" + 0.015*"crab_leg" + 0.015*"price" + 0.015*"want" + 0.015*"prime" + 0.014*"leg" + 0.013*"lunch" + 0.012*"thing"
+2020-02-24 12:24:11,821 : INFO : topic #9 (0.900): 0.014*"roll" + 0.014*"sushi" + 0.013*"salad" + 0.013*"station" + 0.012*"select" + 0.011*"brunch" + 0.011*"shrimp" + 0.010*"serv" + 0.010*"tuna" + 0.010*"line"
+2020-02-24 12:24:11,821 : INFO : topic #5 (0.900): 0.021*"line" + 0.019*"leg" + 0.017*"dinner" + 0.016*"sushi" + 0.015*"price" + 0.015*"prime" + 0.013*"wait" + 0.013*"best" + 0.012*"well" + 0.011*"select"
+2020-02-24 12:24:11,821 : INFO : topic #3 (0.900): 0.021*"dinner" + 0.021*"wynn" + 0.019*"price" + 0.016*"select" + 0.013*"come" + 0.012*"great" + 0.011*"leg" + 0.011*"well" + 0.010*"sushi" + 0.010*"probabl"
+2020-02-24 12:24:11,821 : INFO : topic diff=0.086577, rho=0.281316
+2020-02-24 12:24:12,131 : INFO : -5.864 per-word bound, 58.2 perplexity estimate based on a held-out corpus of 318 documents with 9383 words
+2020-02-24 12:24:12,131 : INFO : PROGRESS: pass 4, dispatched chunk #0 = documents up to #500/4318, outstanding queue size 1
+2020-02-24 12:24:12,134 : INFO : PROGRESS: pass 4, dispatched chunk #1 = documents up to #1000/4318, outstanding queue size 2
+2020-02-24 12:24:12,137 : INFO : PROGRESS: pass 4, dispatched chunk #2 = documents up to #1500/4318, outstanding queue size 3
+2020-02-24 12:24:12,138 : INFO : PROGRESS: pass 4, dispatched chunk #3 = documents up to #2000/4318, outstanding queue size 4
+2020-02-24 12:24:12,138 : INFO : PROGRESS: pass 4, dispatched chunk #4 = documents up to #2500/4318, outstanding queue size 5
+2020-02-24 12:24:12,166 : INFO : PROGRESS: pass 4, dispatched chunk #5 = documents up to #3000/4318, outstanding queue size 6
+2020-02-24 12:24:12,166 : INFO : PROGRESS: pass 4, dispatched chunk #6 = documents up to #3500/4318, outstanding queue size 7
+2020-02-24 12:24:12,166 : INFO : PROGRESS: pass 4, dispatched chunk #7 = documents up to #4000/4318, outstanding queue size 8
+2020-02-24 12:24:12,166 : INFO : PROGRESS: pass 4, dispatched chunk #8 = documents up to #4318/4318, outstanding queue size 9
+2020-02-24 12:24:13,723 : INFO : merging changes from 2000 documents into a model of 4318 documents
+2020-02-24 12:24:13,724 : INFO : topic #7 (0.900): 0.023*"line" + 0.022*"come" + 0.017*"dinner" + 0.016*"crab_leg" + 0.015*"price" + 0.015*"want" + 0.014*"prime" + 0.014*"leg" + 0.013*"lunch" + 0.012*"thing"
+2020-02-24 12:24:13,724 : INFO : topic #6 (0.900): 0.017*"select" + 0.015*"best" + 0.015*"breakfast" + 0.015*"great" + 0.013*"crab_leg" + 0.012*"leg" + 0.012*"line" + 0.011*"fresh" + 0.011*"prime" + 0.010*"potato"
+2020-02-24 12:24:13,724 : INFO : topic #0 (0.900): 0.036*"wait" + 0.033*"line" + 0.019*"place" + 0.017*"qualiti" + 0.016*"hour" + 0.015*"best" + 0.015*"long" + 0.013*"price" + 0.013*"servic" + 0.011*"well"
+2020-02-24 12:24:13,725 : INFO : topic #3 (0.900): 0.024*"wynn" + 0.022*"dinner" + 0.020*"price" + 0.016*"select" + 0.013*"come" + 0.012*"great" + 0.011*"well" + 0.011*"leg" + 0.011*"beef" + 0.011*"sushi"
+2020-02-24 12:24:13,725 : INFO : topic #4 (0.900): 0.024*"come" + 0.023*"tabl" + 0.018*"servic" + 0.015*"drink" + 0.014*"server" + 0.014*"great" + 0.013*"tast" + 0.013*"line" + 0.011*"seat" + 0.010*"dinner"
+2020-02-24 12:24:13,725 : INFO : topic diff=0.060857, rho=0.270805
+2020-02-24 12:24:15,422 : INFO : -5.857 per-word bound, 58.0 perplexity estimate based on a held-out corpus of 318 documents with 9383 words
+2020-02-24 12:24:15,787 : INFO : merging changes from 2000 documents into a model of 4318 documents
+2020-02-24 12:24:15,788 : INFO : topic #8 (0.900): 0.025*"leg" + 0.019*"come" + 0.017*"pretti" + 0.016*"qualiti" + 0.013*"beef" + 0.013*"plate" + 0.013*"price" + 0.012*"crab_leg" + 0.012*"select" + 0.012*"dinner"
+2020-02-24 12:24:15,788 : INFO : topic #3 (0.900): 0.025*"wynn" + 0.022*"dinner" + 0.020*"price" + 0.017*"select" + 0.013*"come" + 0.012*"great" + 0.012*"well" + 0.012*"beef" + 0.011*"leg" + 0.011*"qualiti"
+2020-02-24 12:24:15,788 : INFO : topic #1 (0.900): 0.032*"worth" + 0.023*"great" + 0.022*"price" + 0.021*"dinner" + 0.018*"lunch" + 0.017*"select" + 0.015*"wait" + 0.014*"line" + 0.013*"place" + 0.012*"come"
+2020-02-24 12:24:15,788 : INFO : topic #9 (0.900): 0.017*"roll" + 0.015*"sushi" + 0.014*"salad" + 0.013*"station" + 0.012*"select" + 0.012*"brunch" + 0.012*"shrimp" + 0.011*"tuna" + 0.010*"tast" + 0.010*"serv"
+2020-02-24 12:24:15,788 : INFO : topic #7 (0.900): 0.023*"come" + 0.022*"line" + 0.018*"dinner" + 0.017*"crab_leg" + 0.015*"want" + 0.015*"price" + 0.015*"leg" + 0.014*"prime" + 0.013*"lunch" + 0.013*"thing"
+2020-02-24 12:24:15,789 : INFO : topic diff=0.052285, rho=0.270805
+2020-02-24 12:24:16,503 : INFO : -5.853 per-word bound, 57.8 perplexity estimate based on a held-out corpus of 318 documents with 9383 words
+2020-02-24 12:24:16,505 : INFO : merging changes from 318 documents into a model of 4318 documents
+2020-02-24 12:24:16,505 : INFO : topic #1 (0.900): 0.035*"worth" + 0.023*"great" + 0.023*"price" + 0.021*"dinner" + 0.018*"lunch" + 0.017*"select" + 0.014*"wait" + 0.014*"line" + 0.013*"place" + 0.012*"come"
+2020-02-24 12:24:16,506 : INFO : topic #9 (0.900): 0.018*"roll" + 0.015*"sushi" + 0.015*"salad" + 0.013*"station" + 0.013*"brunch" + 0.012*"tuna" + 0.012*"shrimp" + 0.011*"select" + 0.011*"hand" + 0.010*"serv"
+2020-02-24 12:24:16,506 : INFO : topic #0 (0.900): 0.041*"wait" + 0.037*"line" + 0.021*"place" + 0.019*"hour" + 0.017*"long" + 0.017*"qualiti" + 0.015*"best" + 0.014*"price" + 0.014*"servic" + 0.011*"peopl"
+2020-02-24 12:24:16,506 : INFO : topic #3 (0.900): 0.027*"wynn" + 0.023*"dinner" + 0.020*"price" + 0.017*"select" + 0.013*"come" + 0.012*"probabl" + 0.012*"well" + 0.012*"great" + 0.012*"salmon" + 0.011*"leg"
+2020-02-24 12:24:16,506 : INFO : topic #7 (0.900): 0.024*"line" + 0.023*"come" + 0.019*"dinner" + 0.017*"crab_leg" + 0.016*"want" + 0.015*"price" + 0.015*"prime" + 0.015*"leg" + 0.014*"lunch" + 0.013*"thing"
+2020-02-24 12:24:16,506 : INFO : topic diff=0.092928, rho=0.270805
+2020-02-24 12:24:16,935 : INFO : -5.824 per-word bound, 56.6 perplexity estimate based on a held-out corpus of 318 documents with 9383 words
+2020-02-24 12:25:23,424 : INFO : using ParallelWordOccurrenceAccumulator(processes=3, batch_size=64) to estimate probabilities from sliding windows
+2020-02-24 12:25:27,040 : INFO : serializing accumulator to return to master...
+2020-02-24 12:25:27,042 : INFO : accumulator serialized
+2020-02-24 12:25:27,054 : INFO : serializing accumulator to return to master...
+2020-02-24 12:25:27,056 : INFO : accumulator serialized
+2020-02-24 12:25:27,059 : INFO : serializing accumulator to return to master...
+2020-02-24 12:25:27,061 : INFO : accumulator serialized
+2020-02-24 12:25:27,101 : INFO : 3 accumulators retrieved from output queue
+2020-02-24 12:25:27,155 : INFO : accumulated word occurrence stats for 21393 virtual documents
+2020-02-24 12:25:27,790 : INFO : topic #0 (0.900): 0.041*"wait" + 0.037*"line" + 0.021*"place" + 0.019*"hour" + 0.017*"long" + 0.017*"qualiti" + 0.015*"best" + 0.014*"price" + 0.014*"servic" + 0.011*"peopl"
+2020-02-24 12:25:27,793 : INFO : topic #1 (0.900): 0.035*"worth" + 0.023*"great" + 0.023*"price" + 0.021*"dinner" + 0.018*"lunch" + 0.017*"select" + 0.014*"wait" + 0.014*"line" + 0.013*"place" + 0.012*"come"
+2020-02-24 12:25:27,794 : INFO : topic #2 (0.900): 0.018*"brunch" + 0.017*"line" + 0.015*"place" + 0.015*"come" + 0.015*"drink" + 0.012*"price" + 0.012*"best" + 0.012*"definit" + 0.012*"sushi" + 0.010*"wait"
+2020-02-24 12:25:27,795 : INFO : topic #3 (0.900): 0.027*"wynn" + 0.023*"dinner" + 0.020*"price" + 0.017*"select" + 0.013*"come" + 0.012*"probabl" + 0.012*"well" + 0.012*"great" + 0.012*"salmon" + 0.011*"leg"
+2020-02-24 12:25:27,795 : INFO : topic #4 (0.900): 0.025*"tabl" + 0.024*"come" + 0.019*"servic" + 0.018*"drink" + 0.017*"server" + 0.014*"great" + 0.014*"tast" + 0.013*"line" + 0.011*"say" + 0.011*"seat"
+2020-02-24 12:25:27,795 : INFO : topic #5 (0.900): 0.022*"line" + 0.021*"leg" + 0.019*"dinner" + 0.017*"sushi" + 0.016*"prime" + 0.015*"price" + 0.013*"best" + 0.013*"well" + 0.012*"wait" + 0.012*"station"
+2020-02-24 12:25:27,795 : INFO : topic #6 (0.900): 0.018*"select" + 0.017*"breakfast" + 0.016*"best" + 0.015*"great" + 0.013*"fresh" + 0.012*"crab_leg" + 0.011*"potato" + 0.011*"leg" + 0.011*"prime" + 0.011*"favorit"
+2020-02-24 12:25:27,796 : INFO : topic #7 (0.900): 0.024*"line" + 0.023*"come" + 0.019*"dinner" + 0.017*"crab_leg" + 0.016*"want" + 0.015*"price" + 0.015*"prime" + 0.015*"leg" + 0.014*"lunch" + 0.013*"thing"
+2020-02-24 12:25:27,796 : INFO : topic #8 (0.900): 0.027*"leg" + 0.019*"come" + 0.018*"pretti" + 0.016*"qualiti" + 0.014*"plate" + 0.013*"beef" + 0.013*"crab_leg" + 0.013*"price" + 0.012*"prime" + 0.012*"select"
+2020-02-24 12:25:27,796 : INFO : topic #9 (0.900): 0.018*"roll" + 0.015*"sushi" + 0.015*"salad" + 0.013*"station" + 0.013*"brunch" + 0.012*"tuna" + 0.012*"shrimp" + 0.011*"select" + 0.011*"hand" + 0.010*"serv"
+2020-02-24 12:44:09,134 : WARNING : No handles with labels found to put in legend.
