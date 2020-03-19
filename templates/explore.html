@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+<head>
+{% block head %} 
+    {{ super() }} 
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+{% endblock %}
+</head>
+
+<body>
+{% block content %}
+            
+<p>This is explore !  boom boom boom </p>
+
+<div id="map" style="height: 80vh;"></div>
+
+<script>
+
+var map = L.map('map').setView([33.3216322198, -111.9625568958], 13)
+
+L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    attribution: 'OSM'
+}).addTo(map)
+
+axios.get('http://127.0.0.1:5000/geojson-features').then(response => {
+    console.log(response.data)
+    L.geoJSON(response.data, {pointToLayer: function(feature, latlng) {
+        var greenIcon = new L.Icon({
+            iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-green.png',
+            shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+            shadowSize: [41, 41]
+        });
+        var blueIcon = new L.Icon({
+            iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-blue.png',
+            shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+            shadowSize: [41, 41]
+        });
+        var yellowIcon = new L.Icon({
+            iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-yellow.png',
+            shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+            shadowSize: [41, 41]
+        });
+        var orangeIcon = new L.Icon({
+            iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-orange.png',
+            shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+            shadowSize: [41, 41]
+        });
+        var redIcon = new L.Icon({
+            iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
+            shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+            shadowSize: [41, 41]
+        });
+
+        switch (feature.review_stars) {
+            case 5.0: 
+                return L.marker(latlng, {icon: greenIcon});
+            case 4.0: 
+                return L.marker(latlng, {icon: blueIcon});
+            case 3.0: 
+                return L.marker(latlng, {icon: yellowIcon});
+            case 2.0: 
+                return L.marker(latlng, {icon: orangeIcon});
+            case 1.0: 
+                return L.marker(latlng, {icon: redIcon});
+            default:
+                return L.marker(latlng, {icon: yellowIcon});
+        }        
+    }
+    })
+    .addTo(map)
+})
+</script>
+{% endblock %}
+</body>
+
+{% block footer %} {{ super() }} {% endblock %}
+
+{% block scripts %}
+{{ super() }}
+{% endblock %}
+
