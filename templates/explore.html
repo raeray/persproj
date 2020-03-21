@@ -2,137 +2,112 @@
 
 <head>
 {% block head %} 
-    {{ super() }} 
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	{{ super() }} 
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
+	<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 {% endblock %}
 </head>
 
 <body>
-    {% block content %}
-    <div class="row">
-        <div class="col-md-10">
-            <div class="card ">
-                
-                <div class="card-header "> 
-                    <h4>Explore on the map</h4>
-                </div>
-                
-                <div class="card-body ">
+	{% block content %}
+	<div class="row">
+		<div class="col-md-8">
+			<div class="card ">
+				
+				<div class="card-header "> 
+					<h4>Explore on the map</h4>
 
-                    <div id="map" style="height: 80vh;"></div>
+				</div>
+				
+				<div class="card-body ">
 
-                    <script>
-                    var map = L.map('map').setView([33.3216322198, -111.9625568958], 8)    
+					<button id="search_resto" type="button" onclick="getBounds()">Search Restaurants</button>
+					<button id="clear_resto" type="button" onclick="deleteAllMarkers()">Clear</button>
 
-                    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-                        attribution: 'OSM'
-                    }).addTo(map)
-                    
-                    // var map is an instance of a Leaflet map
-                    // this function assumes you have added markers as GeoJSON to the map
-                    // it will return an array of all features currently shown in the
-                    // active bounding region.
-                    // https://stackoverflow.com/questions/22081680/get-a-list-of-markers-layers-within-current-map-bounds-in-leaflet
-                    function getFeaturesInView() {
-                        var features = [];
-                        map.eachLayer( function(layer) {
-                            if(layer instanceof L.Marker) {
-                            if(map.getBounds().contains(layer.getLatLng())) {
-                                features.push(layer.feature);
-                            }
-                            }
-                        });
-                        return features;
-                    }
+					<div id="map" style="height: 60vh;"></div>
 
-                    function onEachFeature(feature, layer) {
-                        message = "review stars: ".concat(String(feature.review_stars)," | business stars: ", String(feature.business_stars))
-                        console.log(message)
-                        layer.bindPopup(message);
-                    }
+				</div>
+			</div>
+		</div>
 
-                    getFeaturesInView()
+		<div class="col-md-2">
+			<div class="card ">
+				<div class="card-header "> 
+					<h4>Restaurant Information</h4>
+				</div>
+				<p> This is where the info about the restaurant will go. boom boom </p>
+				
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+			<div class="card ">
+				<div class="card-header "> 
+					<h4>Distribution of Stars</h4>
+				</div>
+				<div class="card-body ">
+					<canvas id="starChart" width="400" height="400"></canvas>					
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="card ">
+				<div class="card-header "> 
+					<h4>Conversation Topics</h4>
+				</div>
+				<div class="card-body ">
+					<canvas id="topicChart" width="400" height="400"></canvas>
+					<script>
+						var topicChartElement = document.getElementById('topicChart');
+						var topicChart = new Chart(topicChartElement, {
+						type: 'bar',
+						data: {
+							labels: ['Price', 'Wait', 'Sushi', 'Night', 'Happy Hour'],
+							datasets: [{
+								label: '# of Restaurants',
+								data: [20, 7, 5, 30, 9],
+								backgroundColor: [
+									'rgba(255, 99, 132, 0.2)',
+									'rgba(54, 162, 235, 0.2)',
+									'rgba(255, 206, 86, 0.2)',
+									'rgba(75, 192, 192, 0.2)',
+									'rgba(153, 102, 255, 0.2)'
+								],
+								borderColor: [
+									'rgba(255, 99, 132, 1)',
+									'rgba(54, 162, 235, 1)',
+									'rgba(255, 206, 86, 1)',
+									'rgba(75, 192, 192, 1)',
+									'rgba(153, 102, 255, 1)'
+								],
+								borderWidth: 1
+							}]
+						},
+						options: {
+							scales: {
+								yAxes: [{
+									ticks: {
+										beginAtZero: true
+									}
+								}]
+							}
+						}
+						});
 
-                    axios.get('http://127.0.0.1:5000/geojson-features').then(response => {
-                        console.log(response.data)
-                        L.geoJSON(response.data, {pointToLayer: function(feature, latlng) {
-                            var greenIcon = new L.Icon({
-                                iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-green.png',
-                                shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-                                iconSize: [25, 41],
-                                iconAnchor: [12, 41],
-                                popupAnchor: [1, -34],
-                                shadowSize: [41, 41]
-                            });
-                            var blueIcon = new L.Icon({
-                                iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-blue.png',
-                                shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-                                iconSize: [25, 41],
-                                iconAnchor: [12, 41],
-                                popupAnchor: [1, -34],
-                                shadowSize: [41, 41]
-                            });
-                            var yellowIcon = new L.Icon({
-                                iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-yellow.png',
-                                shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-                                iconSize: [25, 41],
-                                iconAnchor: [12, 41],
-                                popupAnchor: [1, -34],
-                                shadowSize: [41, 41]
-                            });
-                            var orangeIcon = new L.Icon({
-                                iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-orange.png',
-                                shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-                                iconSize: [25, 41],
-                                iconAnchor: [12, 41],
-                                popupAnchor: [1, -34],
-                                shadowSize: [41, 41]
-                            });
-                            var redIcon = new L.Icon({
-                                iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
-                                shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-                                iconSize: [25, 41],
-                                iconAnchor: [12, 41],
-                                popupAnchor: [1, -34],
-                                shadowSize: [41, 41]
-                            });
+					</script>
 
-                            switch (feature.review_stars) {
-                                case 5.0: 
-                                    return L.marker(latlng, {icon: greenIcon});
-                                case 4.0: 
-                                    return L.marker(latlng, {icon: blueIcon});
-                                case 3.0: 
-                                    return L.marker(latlng, {icon: yellowIcon});
-                                case 2.0: 
-                                    return L.marker(latlng, {icon: orangeIcon});
-                                case 1.0: 
-                                    return L.marker(latlng, {icon: redIcon});
-                                default:
-                                    return L.marker(latlng, {icon: yellowIcon});
-                            }        
-                        }, onEachFeature: onEachFeature
-                        })
-                        
-                        .addTo(map)
-                    })
-                    </script>
-                </div>
-            </div>
-        </div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-        <div class="col-md-2">
-            <div class="card ">
-                <div class="card-header "> 
-                    <h4>Restaurant Information</h4>
-                </div>
-                <p> This is where the info about the restaurant will go.</p>
-            </div>
-        </div>
-    </div>
+
+
 </body>
 {% endblock %}
 
@@ -140,5 +115,7 @@
 
 {% block scripts %}
 {{ super() }}
+<script src="{{ url_for('static', filename='js/explore.js')}}" type="text/javascript"></script>
+
 {% endblock %}
 
