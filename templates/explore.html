@@ -4,18 +4,22 @@
 {% block head %} 
 	{{ super() }} 
 	<meta charset="utf-8">
+	<link href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
 	<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
 	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+	<!-- <script src="../static/js/core/jquery.3.2.1.min.js" type="text/javascript"></script>
+	<script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script> -->
 {% endblock %}
 </head>
 
 <body>
 	{% block content %}
+	<!-- start row 1 -->
 	<div class="row">
-		<div class="col-md-8">
+		<div class="col-md-6">
 			<div class="card ">
 				
 				<div class="card-header "> 
@@ -23,7 +27,7 @@
 
 				</div>
 				
-				<div class="card-body ">
+				<div class="card-body overflow-auto">
 
 					<button id="search_resto" type="button" onclick="getBounds()">Search Restaurants</button>
 					<button id="clear_resto" type="button" onclick="deleteAllMarkers()">Clear</button>
@@ -31,80 +35,106 @@
 					<div id="map" style="height: 60vh;"></div>
 
 				</div>
+			
 			</div>
 		</div>
+		
+		<!-- start a new column -->
+		<div class="col-md-3">
+			<div class="row">
+				<div class="card ">
+					<div class="card-header "> 
 
-		<div class="col-md-2">
-			<div class="card ">
-				<div class="card-header "> 
-					<h4>Restaurant Information</h4>
-				</div>
-				<p> This is where the info about the restaurant will go. boom boom </p>
-				
-			</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-4">
-			<div class="card ">
-				<div class="card-header "> 
-					<h4>Distribution of Stars</h4>
-				</div>
-				<div class="card-body ">
-					<canvas id="starChart" width="400" height="400"></canvas>					
+						<h4>Distribution of Stars</h4>
+					</div>
+					<div class="card-body ">
+						<canvas id="starChart" width="100" height="72"></canvas>					
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="col-md-4">
-			<div class="card ">
-				<div class="card-header "> 
-					<h4>Conversation Topics</h4>
-				</div>
-				<div class="card-body ">
-					<canvas id="topicChart" width="400" height="400"></canvas>
-					<script>
-						var topicChartElement = document.getElementById('topicChart');
-						var topicChart = new Chart(topicChartElement, {
-						type: 'bar',
-						data: {
-							labels: ['Price', 'Wait', 'Sushi', 'Night', 'Happy Hour'],
-							datasets: [{
-								label: '# of Restaurants',
-								data: [20, 7, 5, 30, 9],
-								backgroundColor: [
-									'rgba(255, 99, 132, 0.2)',
-									'rgba(54, 162, 235, 0.2)',
-									'rgba(255, 206, 86, 0.2)',
-									'rgba(75, 192, 192, 0.2)',
-									'rgba(153, 102, 255, 0.2)'
-								],
-								borderColor: [
-									'rgba(255, 99, 132, 1)',
-									'rgba(54, 162, 235, 1)',
-									'rgba(255, 206, 86, 1)',
-									'rgba(75, 192, 192, 1)',
-									'rgba(153, 102, 255, 1)'
-								],
-								borderWidth: 1
-							}]
-						},
-						options: {
-							scales: {
-								yAxes: [{
-									ticks: {
-										beginAtZero: true
+
+			<div class="row">
+				<!-- <div class="col-md-3"> -->
+					<div class="card ">
+						<div class="card-header "> 
+								<h4>Conversation Topics</h4>
+						</div>
+						<div class="card-body ">
+							<canvas id="topicChart" width="100" height="72"></canvas>
+							<script>
+								var topicChartElement = document.getElementById('topicChart');
+								var topicChart = new Chart(topicChartElement, {
+								type: 'bar',
+								data: {
+									labels: ['Price', 'Wait', 'Sushi', 'Night', 'Happy Hour'],
+									datasets: [{
+										label: '# of Restaurants',
+										data: [20, 7, 5, 30, 9],
+										backgroundColor: [
+											'rgba(255, 99, 132, 0.2)',
+											'rgba(54, 162, 235, 0.2)',
+											'rgba(255, 206, 86, 0.2)',
+											'rgba(75, 192, 192, 0.2)',
+											'rgba(153, 102, 255, 0.2)'
+										],
+										borderColor: [
+											'rgba(255, 99, 132, 1)',
+											'rgba(54, 162, 235, 1)',
+											'rgba(255, 206, 86, 1)',
+											'rgba(75, 192, 192, 1)',
+											'rgba(153, 102, 255, 1)'
+										],
+										borderWidth: 1
+									}]
+								},
+								options: {
+									scales: {
+										yAxes: [{
+											ticks: {
+												beginAtZero: true
+											}
+										}]
 									}
-								}]
-							}
-						}
-						});
+								}
+								});
 
-					</script>
+							</script>
 
+						</div>
+					<!-- </div> -->
+				</div>
+			</div>
+
+		</div>
+	</div> <!-- End of row 1 -->
+
+	<!-- Start row 2 -->
+	<div class="row">
+		<div class="col-md-9">
+			<div class="card ">
+				<div class="card-body scroll">
+					<div class="card-header "> 
+						<h4>Reviews</h4>
+					</div>
+
+					<table id="review_table" class="display" style="width:100%">
+						<thead>
+							<tr>
+								<th>date</th>
+								<th>text</th>
+								<th>review_stars</th>
+								<th>cool</th>
+								<th>funny</th>
+								<th>useful</th>
+								<th>reviewId</th>
+							</tr>
+						</thead>
+					</table>
 				</div>
 			</div>
 		</div>
-	</div>
+
+	</div> <!-- End of row 2 -->
 
 
 
@@ -115,7 +145,11 @@
 
 {% block scripts %}
 {{ super() }}
+<!-- <script src="../static/js/core/jquery.3.2.1.min.js" type="text/javascript"></script> -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
 <script src="{{ url_for('static', filename='js/explore.js')}}" type="text/javascript"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.20/datatables.min.js"></script>
 
 {% endblock %}
 

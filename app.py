@@ -1,4 +1,5 @@
 from flask import Flask, render_template, url_for, request, redirect,jsonify
+import pandas as pd
 from settings import Settings
 # from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
@@ -17,7 +18,7 @@ from flask_pymongo import MongoClient
 client = MongoClient()
 settings = Settings()
 db_geo = client.get_database(settings.GEO_DATABASE)
-collection_geo = db_geo.get_collection(settings.GEO_COLLECTION)
+collection_reviews = db_geo.get_collection(settings.REVIEW_COLLECTION)
 
 db_business = client.get_database(settings.BUSINESS_DATABASE)
 collection_business = db_business.get_collection(settings.BUSINESS_COLLECTION)
@@ -31,53 +32,98 @@ print('count', collection_business.count())
 
 @app.route('/business_geo', methods=['GET'])
 def get_business_geo_points():
-    
-    boundaries = json.loads(request.args.get('boundaries', ''))
+	
+	boundaries = json.loads(request.args.get('boundaries', ''))
 
-    left_upper_bound = [boundaries.get('_southWest').get('lng'), boundaries.get('_northEast').get('lat')]
-    right_upper_bound = [boundaries.get('_northEast').get('lng'), boundaries.get('_northEast').get('lat')]
-    left_lower_bound = [boundaries.get('_southWest').get('lng'), boundaries.get('_southWest').get('lat')]
-    right_lower_bound = [boundaries.get('_northEast').get('lng'),boundaries.get('_southWest').get('lat')]
+	left_upper_bound = [boundaries.get('_southWest').get('lng'), boundaries.get('_northEast').get('lat')]
+	right_upper_bound = [boundaries.get('_northEast').get('lng'), boundaries.get('_northEast').get('lat')]
+	left_lower_bound = [boundaries.get('_southWest').get('lng'), boundaries.get('_southWest').get('lat')]
+	right_lower_bound = [boundaries.get('_northEast').get('lng'),boundaries.get('_southWest').get('lat')]
 
-    cursor = collection_business.find({'location': 
-        {'$geoWithin':
-            {'$geometry':
-                {'type': "Polygon",
-                'coordinates': [[
-                                left_upper_bound,
-                                right_upper_bound,
-                                right_lower_bound,
-                                left_lower_bound,
-                                left_upper_bound]]
-                                }
-                }
-            }
-        }
-    )
+	cursor = collection_business.find({'location': 
+		{'$geoWithin':
+			{'$geometry':
+				{'type': "Polygon",
+				'coordinates': [[
+								left_upper_bound,
+								right_upper_bound,
+								right_lower_bound,
+								left_lower_bound,
+								left_upper_bound]]
+								}
+				}
+			}
+		}
+	)
 
-    cursor_list = [x for x in cursor]
-    
-    points = []
-    iter_ = 0
-    for item in cursor_list:
-        points.append({
-            "name": item['name'],
-            "type": "Feature",
-            "review_count": item['review_count'],
-            "business_stars": item['stars'],
-            "geometry": {
-                "type": item['location']['type'],
-                "coordinates": [item['location']['coordinates'][0],item['location']['coordinates'][1]]
-            }
-        })
-        iter_ += 1
-        # no more than 100 markers
-        if iter_ > 100:
-            break
+	cursor_list = [x for x in cursor]
+	
+	points = []
+	iter_ = 0
+	for item in cursor_list:
+		points.append({
+			"name": item['name'],
+			"type": "Feature",
+			"business_id": item['business_id'],
+			"review_count": item['review_count'],
+			"business_stars": item['stars'],
+			"geometry": {
+				"type": item['location']['type'],
+				"coordinates": [item['location']['coordinates'][0],item['location']['coordinates'][1]]
+			}
+		})
+		iter_ += 1
+		# no more than 100 markers
+		if iter_ > 100:
+			break
 
-    print('points len', len(points))
+	print('points len', len(points))
 
-    return jsonify(points)
+	return jsonify(points)
+
+@app.route('/review', methods=['GET'])
+def get_business_reviews():
+
+	
+	business_id = request.args.get('business_id')
+	print('get business review', business_id)
+
+	# get list of reviews for the business
+	cursor = collection_reviews.find({'business': business_id})
+
+	cursor_list = [x for x in cursor]
+	print('cursor list', len(cursor_list))
+	
+	reviews = []
+	iter_ = 0
+	for item in cursor_list:
+		reviews.append({
+					'reviewId': item['reviewId'],
+					'text': item['text'],
+					'cool': item['cool'],
+					'date': item['date'],
+					'funny': item['funny'],
+					'review_stars': item['review_stars'],
+					'useful': item['useful'],
+					# 'geometry': {
+					# 	"type": item['location']['type'],
+					# 	"coordinates": [item['location']['coordinates'][0],item['location']['coordinates'][1]]
+					# }
+				})
+
+		iter_ += 1
+		
+		# no more than 30 reviews
+		if iter_ > 30:
+			break
+	return jsonify(reviews)
+
+@app.route('/review_display', methods=['GET'])
+def display_review_table():
+	edit_review_list = []
+	review_list = request.args.getlist('review_val[]')
+	# return render_template('review_display.html', age='10',review_list = str(review_list))
+	return jsonify({'data': review_list})
 
 #################################################
 # Yelp Fushio API Setup
@@ -120,57 +166,62 @@ SEARCH_LIMIT = 5
 #     }
 
 #     print(u'Querying {0} ...'.format(url))
-    
+	
 #     response = requests.request('GET', url, headers=headers, params=url_params)
 
 #     return response.json()
 
 
 def search(api_key, term, location):
-    """Query the Search API by a search term and location.
+	"""Query the Search API by a search term and location.
 
-    Args:
-        term (str): The search term passed to the API.
-        location (str): The search location passed to the API.
+	Args:
+		term (str): The search term passed to the API.
+		location (str): The search location passed to the API.
 
-    Returns:
-        dict: The JSON response from the request.
-    """
+	Returns:
+		dict: The JSON response from the request.
+	"""
 
-    url_params = {
-        'term': term.replace(' ', '+'),
-        'location': location.replace(' ', '+'),
-        'limit':50
-           }
-    print(url_params)
-    return request(API_HOST, SEARCH_PATH, api_key, url_params=url_params)
+	url_params = {
+		'term': term.replace(' ', '+'),
+		'location': location.replace(' ', '+'),
+		'limit':50
+		   }
+	print(url_params)
+	return request(API_HOST, SEARCH_PATH, api_key, url_params=url_params)
 
 
 def get_business(api_key, business_id):
-    """Query the Business API by a business ID.
+	"""Query the Business API by a business ID.
 
-    Args:
-        business_id (str): The ID of the business to query.
+	Args:
+		business_id (str): The ID of the business to query.
 
-    Returns:
-        dict: The JSON response from the request.
-    """
-    business_path = BUSINESS_PATH + business_id
+	Returns:
+		dict: The JSON response from the request.
+	"""
+	business_path = BUSINESS_PATH + business_id
 
-    return request(API_HOST, business_path, api_key)
+	return request(API_HOST, business_path, api_key)
 
 @app.route('/')
 def index():
-    return render_template("index.html")        
+	if display_review_table():
+		review_list = 'thingy'
+		# display_review_table()
+		print('index template found review',review_list)
+
+	return render_template("index.html", review_list = review_list)        
 
 @app.route("/search")
 def search():
-    return render_template("search.html")
+	return render_template("search.html")
 
 @app.route("/explore")
 def explore():
-    return render_template("explore.html")
+	return render_template("explore.html")
 
 if __name__ == '__main__':
-    app.run(debug=True)
+	app.run(debug=True)
 

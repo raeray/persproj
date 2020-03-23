@@ -1,0 +1,45 @@
+<script>
+function setupData() {
+    $(document).ready(function () {
+        $('#example').DataTable({
+            "ajax": {
+                // "url": "static/objects2.txt", // This works for the static file
+                "url": "/review_display", // This now works too thanks to @kthorngren
+                "dataType": "json",
+                "dataSrc": "data",
+                "contentType":"application/json"
+            },
+            "columns": [
+                {"data": "cool"},
+                {"data": "date"},
+            //     {"data": "office"},
+            //     {"data": "extn"},
+            //     {"data": "start_date"},
+            //     {"data": "salary"}
+            ]
+        });
+    });
+}
+$( window ).on( "load", setupData );
+</script>
+
+
+<!-- 
+other html file
+i am {{ age }} years old
+<thead>
+	<th>Field</th>
+	<th>Value</th>
+</thead>
+<tbody>
+
+{{ review_list }}
+
+{% for review in review_list %}
+	<tr>
+		<td>{{ review.text }}</td>
+	</tr>
+{% endfor %}
+
+</tbody>
+ -->

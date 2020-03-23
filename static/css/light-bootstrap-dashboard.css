@@ -2204,6 +2204,10 @@ fieldset[disabled] .btn-neutral.active {
     background-color: #FFFFFF;
     margin-bottom: 30px;
 }
+.card .scroll {
+    max-height: 500px;
+    overflow-y: auto;
+}
 
 .card .image {
     width: 100%;
@@ -3866,4 +3870,26 @@ fieldset[disabled] .btn-neutral.active {
         -ms-overflow-style: -ms-autohiding-scrollbar;
         -webkit-overflow-scrolling: touch;
     }
+}
+
+/* Ensure that the demo table scrolls */
+th, td { white-space: nowrap; }
+div.dataTables_wrapper {
+    margin: 0 auto;
+}
+
+div.container {
+    width: 80%;
+}
+
+.text-wrap{
+    white-space:normal;
+}
+.width-600{
+    width:700px;
+}
+
+.c8tableBody  {
+    width:100%;
+    overflow-x:scroll;
 }
