@@ -15,10 +15,11 @@ from flask_pymongo import MongoClient
 # HARD CODED CONSTANTS
 #################################################
 
-client = MongoClient()
+client = MongoClient('mongodb://127.0.0.1:27017')
 settings = Settings()
 db_geo = client.get_database(settings.GEO_DATABASE)
 collection_reviews = db_geo.get_collection(settings.REVIEW_COLLECTION)
+collection_topics = db_geo.get_collection(settings.TOPIC_COLLECTION)
 
 db_business = client.get_database(settings.BUSINESS_DATABASE)
 collection_business = db_business.get_collection(settings.BUSINESS_COLLECTION)
@@ -83,16 +84,12 @@ def get_business_geo_points():
 
 @app.route('/review', methods=['GET'])
 def get_business_reviews():
-
-	
 	business_id = request.args.get('business_id')
-	print('get business review', business_id)
 
 	# get list of reviews for the business
 	cursor = collection_reviews.find({'business': business_id})
 
 	cursor_list = [x for x in cursor]
-	print('cursor list', len(cursor_list))
 	
 	reviews = []
 	iter_ = 0
@@ -118,12 +115,60 @@ def get_business_reviews():
 			break
 	return jsonify(reviews)
 
-@app.route('/review_display', methods=['GET'])
-def display_review_table():
-	edit_review_list = []
-	review_list = request.args.getlist('review_val[]')
-	# return render_template('review_display.html', age='10',review_list = str(review_list))
-	return jsonify({'data': review_list})
+@app.route('/topics', methods=['GET'])
+def get_topics_distribution():
+	print('calls to python function')
+
+	# get list of reviews for the business
+	business_id = request.args.get('business_id')
+
+
+	# get list of reviews for the business
+	cursor = collection_topics.find({'business': business_id})
+
+	def add_value_or_not(value, l):
+		if value != None:
+			l.append(float(value))
+			return l
+		else:
+			return l
+
+	topic0=[]
+	topic1=[]
+	topic2=[]
+	topic3=[]
+	topic4=[]
+	topic5=[]
+	topic6=[]
+	topic7=[]
+	topic8=[]
+	topic9=[]
+	topic10=[]
+	topic11=[]
+	topic12=[]
+	
+	sum_calcs = {}
+	for review in cursor:
+		sum_calcs = {
+		'topic0': add_value_or_not(review['topics'].get('0'), topic0),
+		'topic1': add_value_or_not(review['topics'].get('1'), topic1),
+		'topic2': add_value_or_not(review['topics'].get('2'), topic2),
+		'topic3': add_value_or_not(review['topics'].get('3'), topic3),
+		'topic4': add_value_or_not(review['topics'].get('4'), topic4),
+		'topic5': add_value_or_not(review['topics'].get('5'), topic5),
+		'topic6': add_value_or_not(review['topics'].get('6'), topic6),
+		'topic7': add_value_or_not(review['topics'].get('7'), topic7),
+		'topic8': add_value_or_not(review['topics'].get('8'), topic8),
+		'topic9': add_value_or_not(review['topics'].get('9'), topic9),
+		'topic10': add_value_or_not(review['topics'].get('10'), topic10),
+		'topic11': add_value_or_not(review['topics'].get('11'), topic11),
+		'topic12': add_value_or_not(review['topics'].get('12'), topic12)
+		}
+
+
+	# calculate average of each topic
+	return jsonify([sum(x[1])/len(x[1]) for x in sum_calcs.items()])
+	
 
 #################################################
 # Yelp Fushio API Setup
