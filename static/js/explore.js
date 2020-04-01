@@ -1,7 +1,5 @@
 var map = L.map('map').setView([33.3216322198, -111.9625568958], 17)    
 
-console.log('explore is loaded')
-
 L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
 	attribution: 'OSM'
 }).addTo(map)
@@ -295,7 +293,7 @@ function onEachFeature(feature, layer) {
 		removeData(topicChart)
 		
 		// reset review list
-		reviews_list = '';
+		var reviews_list = '';
 
 		// call the review api to get all the reviews for business id
 		axios
@@ -308,16 +306,19 @@ function onEachFeature(feature, layer) {
 		$('#review_table').DataTable().clear()
 		// show reviews on table
 		setupData(reviews_list)
-		});
 
 		// call topics and get topic distribution 
-		axios.get('http://127.0.0.1:5000/topics', {params: {business_id: feature.business_id}})
+		axios.get('http://127.0.0.1:5000/topics', {params: {review_list: reviews_list}})
 		.then(response => {
 			console.log('calls new api on js',response.data)
 			// topic list
 			topic_list = response.data;
 			addData(topicChart, topic_list);
 		});
+
+		
+		});
+
 		
 	});
 	layer.bindPopup(message);
