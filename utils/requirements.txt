@@ -146,7 +146,7 @@ prison==0.1.0
 prometheus-client==0.5.0
 prompt-toolkit==1.0.18
 protobuf==3.6.1
-psutil==5.6.3
+psutil==5.6.6
 psycopg2==2.8.3
 ptyprocess==0.6.0
 py==1.7.0
