@@ -12,4 +12,8 @@ class Settings():
 		self.REVIEW_COLLECTION = 'geo_data'
 		self.BUSINESS_COLLECTION = 'Restaurants'
 		self.TOPIC_COLLECTION = 'Topics'
+		self.TOPIC_VALUES_COLLECTION = 'collection_topics'
+
+		self.model_path = '/Users/mael/mirae_kim/persproj/models/2020_03_23/lda_model_eta_01_ntopics_13.lda'
+		self.dictionary_path = '/Users/mael/mirae_kim/persproj/models/2020_03_22/dictionary.dict'
 

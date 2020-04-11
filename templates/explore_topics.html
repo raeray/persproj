@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% block head %} {{ super() }}
+<meta charset="utf-8">
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
+	<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.20/datatables.min.js"></script>
+	<script src="{{ url_for('static', filename='build/heatmap.js')}}"></script>
+	<script src="{{ url_for('static', filename='js/leaflet-heat.js')}}"></script>
+	<script src="{{ url_for('static', filename='leaflet-heatmap/leaflet-heatmap.js')}}"></script>
+	<script src="https://raw.githubusercontent.com/pa7/heatmap.js/develop/plugins/leaflet-heatmap/leaflet-heatmap.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+	
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+	<link href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" rel="stylesheet"/>
+{% endblock %}
+
+{% block content %}
+
+<select name="dropdownselection" id='dropdownresult' onchange="getBounds(this.value)">
+<!-- <select name="dropdownselection" id='dropdownresult'> -->
+	<option value="none" selected disabled hidden> 
+          Select Topic
+     </option>
+    <option value=0>Topic 0</option>
+    <option value=1>Topic 1</option>
+    <option value=2>Topic 2</option>
+    <option value=3>Topic 3</option>
+    <option value=4>Topic 4</option>
+    <option value=5>Topic 5</option>
+    <option value=6>Topic 6</option>
+    <option value=7>Topic 7</option>
+    <option value=8>Topic 8</option>
+    <option value=9>Topic 9</option>
+    <option value=10>Topic 10</option>
+    <option value=11>Topic 11</option>
+    <option value=12>Topic 12</option>
+</select>
+
+<!-- <div class="dropdown show">
+  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Choose Topic
+  </a>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    <a class="dropdown-item" onclick="{{url_for('search')}}">Topic 0</a>
+    <a class="dropdown-item" href="{{url_for('about')}}">Topic 1</a>
+    <a class="dropdown-item" href="#">Topic 2</a>
+    <a class="dropdown-item" href="#">Topic 3</a>
+    <a class="dropdown-item" href="#">Topic 4</a>
+    <a class="dropdown-item" href="#">Topic 5</a>
+    <a class="dropdown-item" href="#">Topic 6</a>
+    <a class="dropdown-item" href="#">Topic 7</a>
+    <a class="dropdown-item" href="#">Topic 8</a>
+    <a class="dropdown-item" href="#">Topic 9</a>
+    <a class="dropdown-item" href="#">Topic 10</a>
+    <a class="dropdown-item" href="#">Topic 11</a>
+    <a class="dropdown-item" href="#">Topic 12</a>
+  </div>
+</div> -->
+
+			
+<!-- <button id="search_resto" type="button" onclick="getBounds()">Search Restaurants</button> -->
+
+<div id="map" style="height: 60vh;"></div>
+
+			
+	
+
+
+{% endblock %}
+
+{% block footer %} {{ super() }} {% endblock %}
+
+{% block scripts %} 
+<script src="{{ url_for('static', filename='build/heatmap.js')}}"></script>
+	<script src="{{ url_for('static', filename='js/leaflet-heat.js')}}"></script>
+	<script src="{{ url_for('static', filename='leaflet-heatmap/leaflet-heatmap.js')}}"></script>
+	<script src="https://raw.githubusercontent.com/pa7/heatmap.js/develop/plugins/leaflet-heatmap/leaflet-heatmap.js"></script>
+
+	<script src="{{ url_for('static', filename='js/explore_topics.js')}}"></script>
+
+{% endblock %}

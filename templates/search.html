@@ -1,33 +1,326 @@
 {% extends 'base.html' %}
 
-{% block head %} {{ super() }} {% endblock %}
+{% block head %} {{ super() }}
+<meta charset="utf-8">
+	<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<!-- <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.20/datatables.min.js"></script> -->
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+	<!-- <link href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" rel="stylesheet"/> -->
+{% endblock %}
 
 {% block content %}
             
+
+
 <div class="row">
-	<div class="col-md-5">
+	<div class="col-md-3">
 		<div class="card ">
 			<div class="card-header "> 
-				<h4>Object 1</h4>
+				<h4>Search Restaurant</h4>
 			</div>
 			<div class="card-body ">
+				<form onsubmit="return false">
+					<label for="fname">Restaurant Name:</label>
+					<input type="text" id="restaurant_name" name="restaurant_name">
+					<br>
+					<label for="lname">Location: </label>
+					<input type="text" id="location_name" name="location_name">
+					<br>
+					<input type="submit" value="Submit" onclick="runRestaurantSearch(document.getElementById('restaurant_name').value,
+					document.getElementById('location_name').value)">
+				</form>
+
 			</div>
 		</div>
 	</div>
 	<div class="col-md-5">
 		<div class="card ">
 			<div class="card-header "> 
-				<h4>Object 2</h4>
+				<h4>Restaurant Information</h4>
 			</div>
 			<div class="card-body ">
+				<table id="restaurant_table" class="display" style="width:100%">
+					<thead>
+						<tr>
+							<th>Field</th>
+							<th>Value</th>
+						</tr>
+					</thead>
+				</table>
+			</div>
+		</div>
+	</div>
+<!-- end of row 1 -->
+</div> 
+
+<div class="row">
+	<div class="col-md-4">
+		<div class="card ">
+			<div class="card-header "> 
+				<h4>Review Stars Distribution</h4>
+			</div>
+			<div class="card-body ">
+				<canvas id="starChart" width="200" height="200"></canvas>
+				<script>
+					var starChartElement = document.getElementById('starChart');
+					var starChart = new Chart(starChartElement, {
+					type: 'bar',
+					data: {
+						labels: ['1', '1.5', '2','2.5', '3','3.5', '4','4.5', '5'],
+						datasets: [{
+							label: '# of Restaurants',
+							data: [0, 0, 0, 0, 0, 0, 0, 0, 0],
+							// data: [business_1_stars,business_15_stars,business_2_stars,business_25_stars,business_3_stars,business_35_stars,business_4_stars,business_45_stars,business_5_stars],
+							backgroundColor: [
+								'rgba(255, 99, 132, 0.2)',
+								'rgba(255, 99, 132, 0.2)',
+								'rgba(54, 162, 235, 0.2)',
+								'rgba(54, 162, 235, 0.2)',
+								'rgba(255, 206, 86, 0.2)',
+								'rgba(255, 206, 86, 0.2)',
+								'rgba(75, 192, 192, 0.2)',
+								'rgba(75, 192, 192, 0.2)',
+								'rgba(153, 102, 255, 0.2)'
+								],
+							borderColor: [
+								'rgba(255, 99, 132, 1)',
+								'rgba(255, 99, 132, 1)',
+								'rgba(54, 162, 235, 1)',
+								'rgba(54, 162, 235, 1)',
+								'rgba(255, 206, 86, 1)',
+								'rgba(255, 206, 86, 1)',
+								'rgba(75, 192, 192, 1)',
+								'rgba(75, 192, 192, 1)',
+								'rgba(153, 102, 255, 1)'
+							],
+							borderWidth: 1
+						}]
+					},
+					options: {
+						scales: {
+							yAxes: [{
+								ticks: {
+									beginAtZero: true
+								}
+							}]
+						}
+					}
+					});
+
+				</script>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="col-md-4">
+		<div class="card ">
+			<div class="card-header "> 
+				<h4>Topic Distribution</h4>
+			</div>
+			<div class="card-body ">
+				<canvas id="topicChart" width="200" height="200"></canvas>
+
+				<script>
+					var topicChartElement = document.getElementById('topicChart');
+					var topicChart = new Chart(topicChartElement, {
+					type: 'bar',
+					data: {
+						labels: ['1', '1.5', '2','2.5', '3','3.5', '4','4.5', '5'],
+						datasets: [{
+							label: '# of Restaurants',
+							data: [0, 0, 0, 0, 0, 0, 0, 0, 0],
+							// data: [business_1_stars,business_15_stars,business_2_stars,business_25_stars,business_3_stars,business_35_stars,business_4_stars,business_45_stars,business_5_stars],
+							backgroundColor: [
+								'rgba(255, 99, 132, 0.2)',
+								'rgba(255, 99, 132, 0.2)',
+								'rgba(54, 162, 235, 0.2)',
+								'rgba(54, 162, 235, 0.2)',
+								'rgba(255, 206, 86, 0.2)',
+								'rgba(255, 206, 86, 0.2)',
+								'rgba(75, 192, 192, 0.2)',
+								'rgba(75, 192, 192, 0.2)',
+								'rgba(153, 102, 255, 0.2)'
+								],
+							borderColor: [
+								'rgba(255, 99, 132, 1)',
+								'rgba(255, 99, 132, 1)',
+								'rgba(54, 162, 235, 1)',
+								'rgba(54, 162, 235, 1)',
+								'rgba(255, 206, 86, 1)',
+								'rgba(255, 206, 86, 1)',
+								'rgba(75, 192, 192, 1)',
+								'rgba(75, 192, 192, 1)',
+								'rgba(153, 102, 255, 1)'
+							],
+							borderWidth: 1
+						}]
+					},
+					options: {
+						scales: {
+							yAxes: [{
+								ticks: {
+									beginAtZero: true
+								}
+							}]
+						}
+					}
+					});
+
+				</script>
+
+
 			
 			</div>
 		</div>
 	</div>
 </div>
 
+<div class="row">
+	<div class="col-md-4">
+		<div class="card ">
+			<div class="card-header "> 
+				<h4>Review Count Timeline</h4>
+			</div>
+			<div class="card-body ">
+				<canvas id="reviewCountChart" width="200" height="200"></canvas>
+
+				<script>
+					var reviewCountChartElement = document.getElementById('reviewCountChart');
+					var reviewCountChart = new Chart(reviewCountChartElement, {
+						type: 'line',
+						data: {
+							labels: ['2010', '2011', '2012', '2013', '2014', '2015', '2016'],
+							datasets: [{
+								label: 'Unfilled',
+								fill: false,
+								backgroundColor: 'rgba(255, 99, 132, 0.2)',
+								borderColor: 'rgba(255, 99, 132, 0.2)',
+								data: [29, 45, 67, 205, 240, 392, 501]
+							}]
+						},
+						options: {
+							scales: {
+								yAxes: [{
+									ticks: {
+										beginAtZero: true
+									}
+								}]
+							}
+						}
+						});
+				</script>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-md-4">
+		<div class="card ">
+			<div class="card-header "> 
+				<h4>Review Stars Timeline</h4>
+			</div>
+			<div class="card-body ">
+				<canvas id="reviewStarTimeline" width="200" height="200"></canvas>
+
+				<script>
+					var reviewCountChartElement = document.getElementById('reviewStarTimeline');
+					var reviewCountChart = new Chart(reviewCountChartElement, {
+						type: 'line',
+						data: {
+							labels: ['2010', '2011', '2012', '2013', '2014', '2015', '2016'],
+							datasets: [{
+								label: 'Unfilled',
+								fill: false,
+								backgroundColor: 'rgba(75, 192, 192, 1)',
+								borderColor: 'rgba(75, 192, 192, 1)',
+								data: [4.76,3.2,3.65,3.77,3.89,4.12,4.08]
+							}]
+						},
+						options: {
+							scales: {
+								yAxes: [{
+									ticks: {
+										beginAtZero: true
+									}
+								}]
+							}
+						}
+						});
+				</script>
+
+
+			
+			</div>
+		</div>
+	</div>
+
+	<div class="col-md-4">
+		<div class="card ">
+			<div class="card-header "> 
+				<h4>Topics Timeline</h4>
+			</div>
+			<div class="card-body ">
+
+				<canvas id="reviewTimeline" width="200" height="200"></canvas>
+
+				<script>
+					var reviewCountChartElement = document.getElementById('reviewStarTimeline');
+					var reviewCountChart = new Chart(reviewCountChartElement, {
+						type: 'line',
+						data: {
+							labels: ['2010', '2011', '2012', '2013', '2014', '2015', '2016'],
+							datasets: [{
+								label: 'Unfilled',
+								fill: false,
+								backgroundColor: 'rgba(75, 192, 192, 1)',
+								borderColor: 'rgba(75, 192, 192, 1)',
+								data: [4.76,3.2,3.65,3.77,3.89,4.12,4.08]
+							}]
+						},
+						options: {
+							scales: {
+								yAxes: [{
+									ticks: {
+										beginAtZero: true
+									}
+								}]
+							}
+						}
+						});
+				</script>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- <div class="col-md-3">
+		<div class="card ">
+			<div class="card-header "> 
+				<h4>Restaurant Information</h4>
+			</div>
+			<div class="card-body ">
+
+				<div id="map" style="height: 90vh;"></div>
+
+			
+			</div>
+		</div>
+	</div> -->
+
 {% endblock %}
 
 {% block footer %} {{ super() }} {% endblock %}
 
-{% block scripts %} {% endblock %}
+{% block scripts %} 
+<script src="{{ url_for('static', filename='js/search.js')}}"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.20/datatables.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<link href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" rel="stylesheet"/>
+
+{% endblock %}

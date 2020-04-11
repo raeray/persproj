@@ -1,0 +1,70 @@
+<table id="review_table" class="display" style="width:100%">
+
+		<script type=text/javascript>
+			$(function() {
+			  $('a#process_input').bind('click', function() {
+				$.post('/search', {  
+					story: $('textarea[name="story"]').val(),
+				}, function(data) {
+					$('#result').text(data.result);
+				});
+				return false;
+			  });
+			});
+		</script>
+
+
+	<thead>
+		<tr>
+			<td>Field</td>
+			<td>Value</td>
+		</tr>
+		<tr>
+			<td>Name</td>
+			<td>Value</td>
+		</tr>
+		<tr>
+			<td>Phone</td>
+			<td>Value</td>
+		</tr>
+		<tr>
+			<td>Review Stars</td>
+			<td>Value</td>
+		</tr>
+		<tr>
+			<td>Review Count</td>
+			<td>Value</td>
+		</tr>
+		<tr>
+			<td>Categories</td>
+			<td>Value</td>
+		</tr>
+		<tr>
+			<td>Hours</td>
+			<td>Value</td>
+		</tr>
+		<tr>
+			<td>Rank in Pizza</td>
+			<td>Value</td>
+		</tr>
+		<tr>
+			<td>Rank in Salad</td>
+			<td>Value</td>
+		</tr>
+		<tr>
+			<td>Rank in Sandwiches</td>
+			<td>Value</td>
+		</tr>
+		<tr>
+			<td>Field</td>
+			<td>Value</td>
+		</tr>
+		<tr>
+			<td>Field</td>
+			<td>Value</td>
+		</tr>
+
+	</thead>
+</table>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>

@@ -35,6 +35,11 @@
                 </div>
                 <ul class="nav">
                     <li class="nav-item">
+                        <a class="nav-link" href="{{url_for('about')}}">
+                            <i class="nc-icon nc-icon nc-paper-2"></i>
+                            <p>Getting Started</p>
+                        </a>
+                    <li class="nav-item">
                         <a class="nav-link" href="{{url_for('search')}}">
                             <i class="nc-icon nc-icon nc-paper-2"></i>
                             <p>Search</p>
@@ -43,19 +48,13 @@
                     <li>
                         <a class="nav-link" href="{{url_for('explore')}}">
                             <i class="nc-icon nc-bell-55"></i>
-                            <p>Explore</p>
+                            <p>Explore Market</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{url_for('search')}}">
+                        <a class="nav-link" href="{{url_for('explore_topics')}}">
                             <i class="nc-icon nc-paper-2"></i>
-                            <p>Recommend</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="javascript:;">
-                            <i class="nc-icon nc-alien-33"></i>
-                            <p>Analyze</p>
+                            <p>Explore Topics</p>
                         </a>
                     </li>
                 </ul>

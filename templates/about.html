@@ -1,0 +1,152 @@
+{% extends 'base.html' %}
+
+{% block head %} {{ super() }}
+<meta charset="utf-8">
+	<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.20/datatables.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+	<link href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" rel="stylesheet"/>
+	<script src="{{ url_for('static', filename='js/core/bootstrap.min.js')}}"></script>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+	<link href="{{ url_for('static', filename='css/demo.css')}}" rel="stylesheet" />
+{% endblock %}
+
+{% block content %}
+			
+<div class="content">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="card">
+					<div class="card-header">
+						<h4 class="card-title">Review Topics</h4>
+						<p class="card-category">Explanation of each Review Topic</p>
+					</div>
+					
+					<div class="card-body">
+						
+						<div class="typography-line">
+							<p>
+								<span>Topic0: Breakfast</span>
+								Describes items related to cafes, breakfast, coffee.
+								<br>
+								'0.034*"place" + 0.018*"coffee" + 0.018*"breakfast" + 0.016*"food" + 0.015*"time" + 0.012*"staff" + 0.012*"service" + 0.010*"day" + 0.008*"love" + 0.008*"spot"'
+							</p>
+						</div>
+						<div class="typography-line">
+							<p>
+								<span>Topic1: Dining Experience</span>
+								Describes dining experience in restaurant such as food, service, staff, menu.
+								<br>
+								'0.061*"food" + 0.049*"service" + 0.032*"place" + 0.022*"restaurant" + 0.022*"time" + 0.014*"experience" + 0.013*"dinner" + 0.012*"staff" + 0.010*"menu" + 0.010*"quality"')
+							</p>
+						</div>
+						<div class="typography-line">
+							<p>
+								<span>Topic2: Western Classics/Main Dish</span>
+								Describes classic western food food.
+								<br>
+								'0.017*"salad" + 0.013*"sauce" + 0.011*"meal" + 0.011*"bread" + 0.010*"chicken" + 0.010*"menu" + 0.010*"dinner" + 0.009*"restaurant" + 0.009*"side" + 0.008*"steak"'
+							</h6>
+						</div>
+						<div class="typography-line">
+							<p>
+								<span>Topic3: Bar Ambiance</span>
+								Describes qualities related to drinks, happy hour, evening ambiance
+								<br>
+								'0.045*"bar" + 0.037*"place" + 0.032*"beer" + 0.027*"drinks" + 0.024*"night" + 0.023*"food" + 0.021*"music" + 0.017*"selection" + 0.015*"drink" + 0.014*"patio"'
+							</p>
+						</div>
+						<div class="typography-line">
+							<p>
+								<span>Topic4: Mexican foods/Chicken</span>
+								Describes mexican food related items.
+								<br>
+								'0.063*"food" + 0.046*"place" + 0.028*"service" + 0.022*"chicken" + 0.017*"staff" + 0.016*"tacos" + 0.015*"chips" + 0.014*"lunch" + 0.014*"time" + 0.011*"love"'
+
+							</p>
+						</div>
+						<div class="typography-line">
+							<p>
+								<span>Topic5: Dessert</span>
+								Describes dessert related items.
+								<br>
+								'0.062*"cream" + 0.049*"ice" + 0.039*"chocolate" + 0.018*"cake" + 0.015*"dessert" + 0.014*"flavors" + 0.013*"la" + 0.011*"vanilla" + 0.010*"cookies" + 0.010*"desserts"'
+							</p>
+						</div>
+						<div class="typography-line">
+							<p>
+								<span>Topic6: Value</span>
+								Describes prices of a restaurant in relation to quality.
+								<br>
+								'0.030*"selection" + 0.030*"quality" + 0.025*"price" + 0.022*"prices" + 0.013*"variety" + 0.013*"foods" + 0.012*"place" + 0.010*"options" + 0.010*"wall" + 0.010*"items"'
+
+							</p>
+						</div>
+						<div class="typography-line">
+							<p>
+								<span>Topic7: Burger</span>
+								<br>
+								'0.068*"fries" + 0.057*"burger" + 0.031*"burgers" + 0.021*"sandwich" + 0.019*"bbq" + 0.017*"meat" + 0.015*"ribs" + 0.013*"bun" + 0.012*"cheese" + 0.011*"beef"'
+							</p>
+						</div>
+						<div class="typography-line">
+							<p>
+								<span>Topic8: Service Quality/Wait time/Logistics</span>
+								Describes service quality related items such as wait time, staff
+								<br>
+								'0.025*"order" + 0.024*"time" + 0.019*"minutes" + 0.016*"service" + 0.015*"people" + 0.014*"food" + 0.013*"customer" + 0.011*"place" + 0.010*"manager" + 0.009*"location"'
+							</p>
+						</div>
+						<div class="typography-line">
+							<p>
+								<span>Topic9: Vegas</span>
+								Describes vegas or casino related attributes. 
+								<br>
+								'0.049*"vegas" + 0.027*"strip" + 0.023*"buffet" + 0.023*"hotel" + 0.017*"las" + 0.015*"room" + 0.011*"casino" + 0.011*"club" + 0.011*"night" + 0.010*"floor"'
+							</p>
+						</div>
+						<div class="typography-line">
+							<p>
+								<span>Topic10: Pizza Related</span>
+								Describes pizza related items.
+								<br>
+								'0.108*"pizza" + 0.029*"toppings" + 0.028*"store" + 0.027*"crust" + 0.020*"slice" + 0.015*"wings" + 0.014*"pizzas" + 0.013*"place" + 0.012*"delivery" + 0.012*"shopping"'
+							</p>
+						</div>
+						<div class="typography-line">
+							<p>
+								<span>Topic11: Asian Food</span>
+								Describes asian food related items.
+								<br>
+								'0.033*"rice" + 0.025*"chicken" + 0.023*"soup" + 0.021*"spicy" + 0.018*"beef" + 0.017*"pork" + 0.017*"noodles" + 0.016*"sauce" + 0.015*"food" + 0.014*"thai"'
+
+							</p>
+						</div>
+						<div class="typography-line">
+							<p>
+								<span>Topic12: Sports Bar</span>
+								Describes watching games on the tv, bar, sports
+								<br>
+								'0.020*"watch" + 0.018*"tables" + 0.017*"room" + 0.015*"tv" + 0.015*"game" + 0.015*"area" + 0.015*"bar" + 0.014*"games" + 0.013*"chairs" + 0.012*"sports"'
+
+							</p>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+{% endblock %}
+
+{% block footer %} {{ super() }} {% endblock %}
+
+{% block scripts %} 
+{% endblock %}
