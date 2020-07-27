@@ -2,7 +2,7 @@ absl-py==0.7.0
 alembic==1.1.0
 antigravity==0.1
 anytree==2.6.0
-apache-airflow==1.10.4
+apache-airflow==1.10.11
 apispec==2.0.2
 appdirs==1.4.3
 appnope==0.1.0
