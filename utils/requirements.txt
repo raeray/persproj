@@ -30,7 +30,7 @@ colorlog==4.0.2
 configparser==3.5.3
 constantly==15.1.0
 croniter==0.3.30
-cryptography==2.5
+cryptography==3.2
 cssselect==1.0.3
 cycler==0.10.0
 decorator==4.3.2
