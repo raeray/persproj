@@ -37,7 +37,7 @@ decorator==4.3.2
 defusedxml==0.6.0
 dewiki==0.1.0
 dill==0.2.9
-Django==2.2.6
+Django==2.2.20
 docutils==0.15.2
 dumb-init==1.2.2
 entrypoints==0.3
