@@ -219,7 +219,7 @@ torchvision==0.4.1
 tornado==4.5.3
 tqdm==4.31.1
 traitlets==4.3.2
-Twisted==17.5.0
+Twisted==22.2.0
 tzlocal==1.5.1
 unicodecsv==0.14.1
 uritemplate==3.0.1
